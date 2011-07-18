@@ -1,0 +1,6 @@
+[submodule "notes/avr/doctools"]
+	path = notes/avr/doctools
+	url = git@github.com:johnpeck/doctools.git
+[submodule "notes/geda/doctools"]
+	path = notes/geda/doctools
+	url = git@github.com:johnpeck/doctools.git
