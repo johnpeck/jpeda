@@ -1,0 +1,48 @@
+\section{Working with \texttt{gsch2pcb}}
+The \verb8gsch2pcb8 back-end will generate a pcb file containing the footprints you specified in \verb8gschem8.  It will not handle the netlist -- this must be done separately.  An easy way to use it is
+\begin{center}
+\begin{minipage}{3cm}
+\texttt{gsch2pcb} \textit{project},
+\end{minipage}
+\end{center}
+where this project file contains details about which schematics to include and where your footprints are.
+
+ 
+
+\subsection{Creating a project file}
+The project file allows you to link different schematic pages together into one design, and supplies \texttt{gsch2pcb} with some command-line arguments.  The file may look like this:
+\begin{center}
+\begin{minipage}{10cm}
+\verbatiminput{sample.pj}
+\end{minipage}
+\end{center}
+where I guess \texttt{gsch2pcb} refers to footprints as ``elements.''
+
+
+
+
+\subsection{Element locations}
+Canned element files are located in 
+\begin{center}
+\begin{minipage}{3cm}
+\verb8/usr/share/pcb/newlib8
+\end{minipage}
+\end{center}
+where ``newlib'' refers to the ``new'' way of creating elements for \texttt{pcb}.  These elements are created graphically using \texttt{pcb}.  Another ``oldlib'' style involves using the GNU m4 macro processor to parametrically define footprints.
+
+The very nice footprints stored in
+\begin{center}
+\begin{minipage}{6cm}
+\verb8~/hobby/eda/footprints/luciani8
+\end{minipage}
+\end{center}
+were taken from
+\begin{center}
+\begin{minipage}{10cm}
+\verb8http://www.luciani.org/geda/pcb/pcb-footprint-list.html8,
+\end{minipage}
+\end{center}
+a collection created by John C Luciani Jr.  These can be moved to my footprints directory and renamed so that \verb8gsch2pcb8 can find them.  I like to modify pad shapes so that only pin 1 is square, leaving the rest oblong.  This can be done by changing the hex code at the end of the ``pad'' statements inside the element definition file.  The code \verb80x00008 sets the shape to oblate, while \verb80x01008 sets it to square.
+
+\subsection{Moving on to PCB}
+If all goes well with \verb8gsch2pcb8, you should just be able to run \verb8pcb8 on the file it generates.  The footprints it brings in will be stacked on top of each other, but you can use \textsl{Select}$\rightarrow$\textsl{Disperse all elements} to break them up.

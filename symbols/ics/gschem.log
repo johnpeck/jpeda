@@ -1,0 +1,50 @@
+gEDA/gschem version 1.4.3.20081231
+gEDA/gschem comes with ABSOLUTELY NO WARRANTY; see COPYING for more details.
+This is free software, and you are welcome to redistribute it under certain
+conditions; please see the COPYING file for more details.
+
+Read system-gafrc file [/usr/share/gEDA/system-gafrc]
+Did not find optional ~/.gEDA/gafrc file [/home/john/.gEDA/gafrc]
+Did not find optional local gafrc file [/home/john/projects/pencils/eda/symbols/ics/gafrc]
+Read system-gschemrc file [/usr/share/gEDA/system-gschemrc]
+Did not find optional ~/.gEDA/gschemrc file [/home/john/.gEDA/gschemrc]
+Did not find optional local gschemrc file [/home/john/projects/pencils/eda/symbols/ics/gschemrc]
+Read init scm file [/usr/share/gEDA/scheme/gschem.scm]
+Loading schematic [/home/john/projects/pencils/eda/symbols/ics/ths4521id-a.sym]
+Did not find specified gafrc file [/home/john/projects/pencils/eda/symbols/ics/gafrc]
+Hidden text is now visible
+Saved [/home/john/projects/pencils/eda/symbols/ics/ths4521id-a.sym]
+Saved [/home/john/projects/pencils/eda/symbols/ics/ths4521id-a.sym]
+Hidden text is now invisible
+Saved [/home/john/projects/pencils/eda/symbols/ics/ths4521id-a.sym]
+Hidden text is now visible
+Hidden text is now invisible
+Hidden text is now visible
+Saved [/home/john/projects/pencils/eda/symbols/ics/ths4521id-a.sym]
+Hidden text is now invisible
+Hidden text is now visible
+Hidden text is now invisible
+Hidden text is now visible
+Saved [/home/john/projects/pencils/eda/symbols/ics/ths4521id-a.sym]
+WARNING: Snap grid size is not equal to 100!
+WARNING: If you are translating a symbol to the origin, the snap grid size should be set to 100
+Translating schematic [-35000 -44000]
+Saved [/home/john/projects/pencils/eda/symbols/ics/ths4521id-a.sym]
+Did not find specified gafrc file [/home/john/projects/pencils/eda/symbols/ics/gafrc]
+Loading schematic [/home/john/projects/pencils/eda/symbols/ics/ths4521id-b.sym]
+Did not find specified gafrc file [/home/john/projects/pencils/eda/symbols/ics/gafrc]
+Did not find specified gafrc file [/home/john/projects/pencils/eda/symbols/ics/gafrc]
+Loading schematic [/home/john/projects/pencils/eda/symbols/ics/opa134-b.sym]
+Did not find specified gafrc file [/home/john/projects/pencils/eda/symbols/ics/gafrc]
+Hidden text is now invisible
+Hidden text is now visible
+Hidden text is now invisible
+Hidden text is now visible
+Saved [/home/john/projects/pencils/eda/symbols/ics/ths4521id-b.sym]
+WARNING: Snap grid size is not equal to 100!
+WARNING: If you are translating a symbol to the origin, the snap grid size should be set to 100
+Translating schematic [-18800 -53250]
+Saved [/home/john/projects/pencils/eda/symbols/ics/ths4521id-b.sym]
+Closing [/home/john/projects/pencils/eda/symbols/ics/opa134-b.sym]
+Saved [/home/john/projects/pencils/eda/symbols/ics/ths4521id-b.sym]
+Saved [/home/john/projects/pencils/eda/symbols/ics/ths4521id-a.sym]

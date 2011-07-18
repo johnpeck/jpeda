@@ -1,0 +1,18 @@
+#---------------------------Begin configuration-------------------------
+
+# The relative path from the project/eda/scripts directory to the
+# schematics directory.  
+# Should be something like ../../reva/schematics with just the rev letter
+# changed. 
+schpath = '../../reva/schematics'
+
+# The kit number (should just be an integer)
+kitnum = 6
+
+# The kit quantity (how many boards do you want to build)
+kitqty = 1
+
+# List of part descriptions
+descfile = '../purchasing/descriptions.dat'
+
+# --------------------------End of configuration------------------------

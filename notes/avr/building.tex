@@ -1,0 +1,64 @@
+\section{Project development}
+
+
+% Modifying a project's makefile
+\subsection{Modifying a project's makefile}
+Unfortunately, I haven't figured out a way to keep track of the latest version of a makefile.  For the time being, the best file to start with should come from the project with the most recent development.  Once you have that file, modify it as follows:
+\begin{enumerate}
+    \item Set the \texttt{MCU} variable.
+        \begin{itemize}
+            \item This variable setting must be recognized by gcc.  Section \ref{gcc_subsection} on page \pageref{gcc_subsection} describes how to find the setting corresponding to your part.
+        \end{itemize}
+    \item Set the \texttt{TARGET} variable.
+        \begin{itemize}
+            \item This is the file containing \texttt{main()}.
+        \end{itemize}
+    \item Set the \texttt{SRC} variable.
+        \begin{itemize}
+            \item Add all the files that must be built for the project, excluding whatever you entered for \texttt{TARGET}.
+        \end{itemize}
+    \item Set the \texttt{AVRDUDE\_PART} variable.
+        \begin{itemize}
+            \item This setting must be recognized by \textbf{avrdude}, and may not be the same as that for \texttt{MCU}.  Section \ref{avrdude_subsection} on page \pageref{avrdude_subsection} describes how to find the setting corresponding to your part.
+        \end{itemize}
+\end{enumerate}
+
+% #include files
+\subsection{\texttt{\#include} files}
+A good source of documentation for these modules can be found at:
+\begin{center}
+\texttt{http://www.nongnu.org/avr-libc/user-manual/modules.html}.
+\end{center}
+
+\begin{itemize}
+    \item \texttt{\#include <avr/io.h>}
+        \begin{itemize}
+            \item Defines register names like \texttt{PORTB} and register offsets like      \texttt{PB7}.
+            \item Always pulls in \texttt{avr/sfr\_defs.h}, which includes things like: \verb8#define _BV(bit) (1<<(bit))8.
+        \end{itemize}
+    \item \texttt{\#include <avr/interrupt.h>}
+        \begin{itemize}
+            \item Allows global manipulation of the interrupt flag with \texttt{sei()}.
+            \item Defines macros for writing interrupt service routines (ISRs).
+        \end{itemize}
+    \item \texttt{\#include <util/delay.h>}
+        \begin{itemize}
+            \item Defines convienience functions for busy-wait delay loops.
+        \end{itemize}
+    \item \texttt{\#include <stdlib.h>}
+        \begin{itemize}
+            \item Defines functions for number conversions, memory allocation, and some mathematics.
+        \end{itemize}
+    \item \texttt{\#include <string.h>}
+        \begin{itemize}
+            \item Provides \texttt{memset()} for initializing strings.
+        \end{itemize}
+\end{itemize}
+
+
+
+\subsection[Using \texttt{avr-size}]{Using \texttt{avr-size} to determine the size of your program in flash}
+
+The program \texttt{avr-size} is the avr version of the GNU size utility.  It is installed as part of the \texttt{binutils} package, and lists the section sizes and total size for a given object file.  Here is an example usage:
+\usercmd{avr-size PC\_Comm.hex}{\verbatiminput{sizeout.txt}}
+In this case, the total size of the object file as it will exist in flash is 1.398kB.  Note that using \texttt{avr-size} on either the hex or the elf object files will give the same result, since they both represent the same thing.

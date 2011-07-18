@@ -1,0 +1,57 @@
+gEDA/gschem version 1.4.3.20081231
+gEDA/gschem comes with ABSOLUTELY NO WARRANTY; see COPYING for more details.
+This is free software, and you are welcome to redistribute it under certain
+conditions; please see the COPYING file for more details.
+
+Read system-gafrc file [/usr/share/gEDA/system-gafrc]
+Did not find optional ~/.gEDA/gafrc file [/home/john/.gEDA/gafrc]
+Did not find optional local gafrc file [/home/john/hobby/avr/butterfly/buttprog/eda/symbols/nonelectrics/gafrc]
+Read system-gschemrc file [/usr/share/gEDA/system-gschemrc]
+Did not find optional ~/.gEDA/gschemrc file [/home/john/.gEDA/gschemrc]
+Did not find optional local gschemrc file [/home/john/hobby/avr/butterfly/buttprog/eda/symbols/nonelectrics/gschemrc]
+Read init scm file [/usr/share/gEDA/scheme/gschem.scm]
+Loading schematic [/home/john/hobby/avr/butterfly/buttprog/eda/symbols/nonelectrics/avr_dragon.sym]
+Did not find specified gafrc file [/home/john/hobby/avr/butterfly/buttprog/eda/symbols/nonelectrics/gafrc]
+Hidden text is now visible
+Saved as [/home/john/hobby/avr/butterfly/buttprog/eda/symbols/nonelectrics/avr_isp2.sym]
+WARNING: Snap grid size is not equal to 100!
+WARNING: If you are translating a symbol to the origin, the snap grid size should be set to 100
+Translating schematic [1000 1000]
+Hidden text is now invisible
+Hidden text is now visible
+WARNING: Snap grid size is not equal to 100!
+WARNING: If you are translating a symbol to the origin, the snap grid size should be set to 100
+Translating schematic [-990 290]
+WARNING: Snap grid size is not equal to 100!
+WARNING: If you are translating a symbol to the origin, the snap grid size should be set to 100
+Translating schematic [-100 -100]
+WARNING: Snap grid size is not equal to 100!
+WARNING: If you are translating a symbol to the origin, the snap grid size should be set to 100
+Translating schematic [100 100]
+WARNING: Snap grid size is not equal to 100!
+WARNING: If you are translating a symbol to the origin, the snap grid size should be set to 100
+Translating schematic [0 0]
+WARNING: Snap grid size is not equal to 100!
+WARNING: If you are translating a symbol to the origin, the snap grid size should be set to 100
+Translating schematic [0 0]
+Saved [/home/john/hobby/avr/butterfly/buttprog/eda/symbols/nonelectrics/avr_isp2.sym]
+Did not find specified gafrc file [/home/john/hobby/avr/butterfly/buttprog/eda/symbols/connectors/gafrc]
+Did not find specified gafrc file [/home/john/hobby/avr/butterfly/buttprog/eda/symbols/connectors/gafrc]
+Did not find specified gafrc file [/home/john/hobby/avr/butterfly/buttprog/eda/symbols/connectors/gafrc]
+Did not find specified gafrc file [/home/john/hobby/avr/butterfly/buttprog/eda/symbols/connectors/gafrc]
+Did not find specified gafrc file [/home/john/hobby/avr/butterfly/buttprog/eda/symbols/connectors/gafrc]
+Did not find specified gafrc file [/home/john/hobby/avr/butterfly/buttprog/eda/symbols/connectors/gafrc]
+Did not find specified gafrc file [/home/john/hobby/avr/butterfly/buttprog/eda/symbols/connectors/gafrc]
+Loading schematic [/home/john/hobby/avr/butterfly/buttprog/eda/symbols/connectors/2pin_mta100_header_in.sym]
+Did not find specified gafrc file [/home/john/hobby/avr/butterfly/buttprog/eda/symbols/connectors/gafrc]
+WARNING: Snap grid size is not equal to 100!
+WARNING: If you are translating a symbol to the origin, the snap grid size should be set to 100
+Translating schematic [1000 1000]
+Hidden text is now invisible
+Hidden text is now visible
+Translating schematic [-1000 -800]
+Saved [/home/john/hobby/avr/butterfly/buttprog/eda/symbols/connectors/2pin_mta100_header_in.sym]
+Saved as [/home/john/hobby/avr/butterfly/buttprog/eda/symbols/connectors/2pin_mta100_header_in_ra.sym]
+Translating schematic [0 -200]
+Saved as [/home/john/hobby/avr/butterfly/buttprog/eda/symbols/connectors/2pin_mta100_header_in.sym]
+Saved [/home/john/hobby/avr/butterfly/buttprog/eda/symbols/connectors/2pin_mta100_header_in.sym]

@@ -1,0 +1,48 @@
+\section{gEDA configuration files}
+
+\subsection{The global \texttt{gafrc} file}
+The gEDA suite consists of many different tools, which often need to know where your component libraries are.  The \texttt{gafrc} file is a repository for this information.  It can either be placed in \verb8~./gEDA8, or in an individual project directory.  Here's an excerpt from the \texttt{gafrc} file I keep in \verb8~./gEDA8:
+
+\begin{center}
+\begin{minipage}{15cm}
+\verbatiminput{/home/john/.gEDA/gafrc_sample}
+\end{minipage}
+\end{center}
+
+The individual tools can be further customized with individual \texttt{rc} files like \texttt{gschemrc}, which are then also placed in the \verb8~./gEDA8 directory.
+
+\subsection{The \texttt{gschemrc} file}
+The configuration options available for your local \verb8~./gEDA/gschemrc8 are shown in the ``system-gschemrc'' file.  On my machine, this file is located in
+\begin{center}
+\begin{minipage}{5cm}
+\verb8/usr/share/gEDA/system-gschemrc8.
+\end{minipage}
+\end{center}
+
+
+\subsection{PCB configuration}
+The configuration file for PCB will vary with the GUI toolkit PCB was compiled with.  Both lesstif and gtk are supported as of \verb8pcb-200604148.  Use
+\begin{center}
+\begin{minipage}{2cm}
+\verb8pcb -h8
+\end{minipage}
+\end{center}
+and look for ``Available GUI hid:'' to determine what's been installed and see a list of configuration options.  The double-dash options correspond to X and gtk resources.  Example:
+\begin{center}
+\begin{minipage}{7cm}
+Command line:\\
+\verb8pcb --grid-color '#ff0000'8\\
+
+.Xdefaults (for lesstif toolkit):\\
+\verb8pcb.grid-color: #ff00008\\
+
+\$HOME/.pcb/preferences (for gtk toolkit):\\
+\verb8grid-color = #ff00008
+\end{minipage}
+\end{center}
+
+%You can also print and export right from the command line.  We use
+%this to generate the documentation; the "master" for illustrations are
+%.pcb files!  We invoke pcb from the Makefile to build png (for html),
+%eps (for dvi), and pdf (for pdf) formats for each board for inclusion
+%in the documentation.

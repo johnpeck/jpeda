@@ -1,0 +1,180 @@
+\section{Setting up Gentoo's cross-compiling toolchain}
+
+\subsection{Using \textbf{crossdev} to install \textbf{avr-gcc}}
+Gentoo provides the \textbf{crossdev} tool to install cross-compiling
+and debugging tools for the AVR.  This will create ebuilds not found
+in the central gentoo portage repositories, so the first thing we'll
+need to do is create a local portage overlay to hold these.  People
+that use overlays have their own ways of managing them.  I only need
+one overlay, so I followed the recommendation to add the line
+\filesnip{/etc/make.conf}{PORTDIR\_OVERLAY = /usr/local/portage}
+in in my make.conf file.  I then need to create the directory with
+\boxcmd{\# mkdir /usr/local/portage}
+to contain the new overlay.  Now I can just
+\boxcmd{\# emerge crossdev}
+to get the crossdev package.  The command
+\boxcmd{\# crossdev --without-headers --target avr}
+can then install the binutils, gcc, and libc packages unique to the
+avr architecture.  The \texttt{--without-headers} flag is necessary to
+keep gentoo from trying to compile avr-libc-headers before avr-gcc is
+actually present.  Apparently, avr-gcc doesn't need any of these libc
+headers anyway.
+
+After everything finishes, you can look in the cross-avr directory
+\rootcmd{ls /usr/local/portage/cross-avr}{
+        \textbf{avr-libc}\hspace{0.5cm}\textbf{binutils}
+        \hspace{0.5cm}\textbf{gcc}
+        \hspace{0.5cm}\textbf{gdb}
+        \hspace{0.5cm}\textbf{insight}
+        }
+to see the subdirectories that were created.  Insight is a graphical
+frontend to the gdb debugger.
+
+\subsubsection{Touching up with some symbolic links}
+I've had some problems with the compiler or linker not being able to find some files.  For example, when working with the AVR Butterfly, the linker has trouble finding \texttt{avr5.x} and \texttt{crtm169p.o}.  I tried and failed to modify the makefile to add paths to these files, which I found in
+\usercmd{locate avr5x}{/usr/lib/binutils/avr/2.21.1/ldscripts/avr5.x}
+\usercmd{locate ctrm169p.o}{/usr/avr/lib/avr5/crtm169p.o}
+My fix is just to create symbolic links to where the linker can find things.  For example,
+\boxcmd{\# ln -s /usr/lib/binutils/avr/2.21.1/ldscripts /usr/avr/lib/ldscripts}
+and
+\boxcmd{\# ln -s /usr/avr/lib/avr5/crtm169p.o /usr/avr/lib/crtm169p.o}
+allowed the linker to finish for AVR Butterfly development.
+
+
+\subsection{A closer look at \textbf{avr-gcc}}
+\label{gcc_subsection}
+The \textbf{crossdev} tool installs the \textbf{avr-gcc} compiler
+port.  Use
+\begin{center}
+    \vspace{-\baselineskip}
+    \begin{boxedminipage}[t]{\textwidth}
+        \texttt{\# avr-gcc --version}\\
+        \texttt{avr-gcc (Gentoo 4.4.0 p1.1) 4.4.0}
+    \end{boxedminipage}
+\end{center}
+to see which version was installed.  Of course, newer versions will
+support newer targets.  I want to see if my \textsl{at90usb162} part
+is supported, so I type
+\begin{center}
+    \vspace{-\baselineskip}
+    \begin{boxedminipage}[t]{\textwidth}
+        \texttt{\# avr-gcc --target-help | grep "at90usb162"}\\
+        \texttt{attiny167 at90usb82 at90usb162 atmega8
+                atmega48 atmega48p atmega88}
+    \end{boxedminipage}
+\end{center}
+to see that it is.
+
+\clearpage
+\subsection{Installing \textbf{avrdude} for programming}
+\label{avrdude_subsection}
+Installing \textbf{avrdude} is as easy as
+\begin{center}
+    \vspace{-\baselineskip}
+    \begin{boxedminipage}[t]{\textwidth}
+        \texttt{\# emerge avrdude}
+    \end{boxedminipage}
+\end{center}
+since it's part of the official portage tree.  When the installer
+finishes, use
+\begin{center}
+    \vspace{-\baselineskip}
+    \begin{boxedminipage}[t]{\textwidth}
+        \texttt{\# avrdude -p?}
+    \end{boxedminipage}
+\end{center}
+to get a list of supported parts.  I installed version 5.5, which
+doesn't support the at90usb162 as it was originally released.  I did
+find a patch to add support at
+\begin{center}
+    \vspace{-0.5\baselineskip}
+    \verb+http://savannah.nongnu.org+
+    \vspace{-0.5\baselineskip}
+\end{center}
+on a message board for bugs.  The file was called
+\begin{center}
+    \vspace{-0.5\baselineskip}
+    \verb+avrdude_conf_55_support_usb162_usb82.diff+
+    \vspace{-0.5\baselineskip}
+\end{center}
+and I copied it to
+\begin{center}
+    \vspace{-0.5\baselineskip}
+    \verb+/usr/portage/dev-embedded/avrdude+
+    \vspace{-0.5\baselineskip}
+\end{center}
+to patch the original ebuild.
+
+To activate the patch, I first added the ``inherit eutils'' line to
+\begin{center}
+    \vspace{-\baselineskip}
+    \begin{tabular}{|l|} \hline
+        \rowcolor[gray]{0.9}
+        \begin{minipage}[c]{\textwidth - 2\tabcolsep}
+            \textbf{File:}
+            /usr/portage/dev-embedded/avrdude/avrdude-5.5.ebuild
+        \end{minipage}\\
+    ...\\
+    LICENSE="GPL-2"\\
+    SLOT="0"\\
+    KEYWORDS="~arm amd64 ~ppc ~ppc64 x86"\\
+    inherit eutils\\
+    ...\\
+    \hline
+    \end{tabular}
+\end{center}
+near the beginning of the file.  This enables the ebuild to use
+\textbf{epatch}.  I then added the ``epatch'' line
+\begin{center}
+    \vspace{-\baselineskip}
+    \begin{tabular}{|l|} \hline
+        \rowcolor[gray]{0.9}
+        \begin{minipage}[c]{\textwidth - 2\tabcolsep}
+            \textbf{File:}
+            /usr/portage/dev-embedded/avrdude/avrdude-5.5.ebuild
+        \end{minipage}\\
+    ...\\
+    src\_unpack() \{    \\
+        unpack \${A}    \\
+        cd "\${S}"      \\
+        \# let the build system re-generate these, bug \#120194 \\
+        rm -f lexer.c config\_gram.c config\_gram.h \\
+        epatch
+        /usr/portage/dev-embedded/
+        avrdude/avrdude\_conf\_55\_support\_usb162\_usb82.diff  \\
+    \}  \\
+    ...\\
+    \hline
+    \end{tabular}
+\end{center}
+to the same file to tell the ebuild where to find the patch.  I then
+issued the command
+\begin{center}
+    \vspace{-\baselineskip}
+    \begin{boxedminipage}[t]{\textwidth}
+        \texttt{\# ebuild /usr/portage/dev-embedded/avrdude/avrdude-5.5.ebuild manifest}
+    \end{boxedminipage}
+\end{center}
+to update the ebuild's manifest.  Finally,
+\begin{center}
+    \vspace{-\baselineskip}
+    \begin{boxedminipage}[t]{\textwidth}
+        \texttt{\# emerge avrdude}
+    \end{boxedminipage}
+\end{center}
+issued again applied the patch and recompiled the package.  The ebuild
+also needs to be able to update the file \texttt{/etc/avrdude.conf}
+before the patch is complete.
+
+When everything is done,
+\begin{center}
+    \vspace{-\baselineskip}
+    \begin{boxedminipage}[t]{\textwidth}
+        \texttt{\# avrdude -p?} \\
+        \texttt{Valid parts are:}\\
+        ...\\
+        \texttt{usb162 = AT90USB162      [/etc/avrdude.conf:11738]}\\
+        ...
+    \end{boxedminipage}
+\end{center}
+indicates success!

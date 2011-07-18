@@ -1,0 +1,10 @@
+gEDA/gnetlist version 1.4.3.20081231
+gEDA/gnetlist comes with ABSOLUTELY NO WARRANTY; see COPYING for more details.
+This is free software, and you are welcome to redistribute it under certain
+conditions; please see the COPYING file for more details.
+
+Remember to check that your schematic has no errors using the drc2 backend.
+You can do it running 'gnetlist -g drc2 your_schematic.sch -o drc_output.txt'
+and seeing the contents of the file drc_output.txt.
+
+Loading schematic [/home/john/jrr/buttprog/reva/schematics/buttprog.sch]

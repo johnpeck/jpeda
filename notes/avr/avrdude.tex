@@ -1,0 +1,35 @@
+\section{Using \texttt{avrdude}}
+
+
+\subsection{Reading the lock byte}
+\label{readlock}
+The AT90USB162 has one lock byte and three fuse bytes.  The lock byte 
+is important because it will prevent flash programming by default.  
+The default value is \texttt{00101100}, or \texttt{0x2c}.  The lowest 
+two bits prevent flash programming when cleared.  To read the lock byte:
+%
+\usercmd{avrdude -c dragon\_isp -p at90usb162 -P usb -U 
+lock:r:lockbyte:b}{\verbatiminput{lockout.txt}}
+%
+...and then look at the \texttt{lockbyte} file to see the value.  The 
+\texttt{b} parameter tells avrdude to write the file in binary, so the 
+file contains:
+\usercmd{cat lockbyte}{\texttt{0b101100}}
+with the lowest two bits cleared.  This means that writing to flash is 
+not allowed.
+
+\clearpage
+\subsection{Erasing the part}
+The \texttt{-e} flag will instruct avrdude to erase the part.  For 
+example:
+%
+\usercmd{avrdude -c dragon\_isp -p at90usb162 -P usb 
+-e}{\verbatiminput{chiperase.txt}}
+%
+...erases the part's flash and eeprom.  The part's lock byte should 
+change from its factory default after an erase to allow writing to 
+flash.  To check this, read the lock byte as in section 
+\ref{readlock}.  The output file now contains
+\usercmd{cat lockbyte}{\texttt{0b111111}}
+with the lowest two bits set.  This indicates that no memory lock 
+features are enabled.

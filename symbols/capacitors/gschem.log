@@ -1,0 +1,15 @@
+gEDA/gschem version 1.4.3.20081231
+gEDA/gschem comes with ABSOLUTELY NO WARRANTY; see COPYING for more details.
+This is free software, and you are welcome to redistribute it under certain
+conditions; please see the COPYING file for more details.
+
+Read system-gafrc file [/usr/share/gEDA/system-gafrc]
+Did not find optional ~/.gEDA/gafrc file [/home/john/.gEDA/gafrc]
+Did not find optional local gafrc file [/home/john/projects/pencils/eda/symbols/capacitors/gafrc]
+Read system-gschemrc file [/usr/share/gEDA/system-gschemrc]
+Did not find optional ~/.gEDA/gschemrc file [/home/john/.gEDA/gschemrc]
+Did not find optional local gschemrc file [/home/john/projects/pencils/eda/symbols/capacitors/gschemrc]
+Read init scm file [/usr/share/gEDA/scheme/gschem.scm]
+Loading schematic [/home/john/projects/pencils/eda/symbols/capacitors/2n2_x7r_50v_1206_horz.sym]
+Did not find specified gafrc file [/home/john/projects/pencils/eda/symbols/capacitors/gafrc]
+Hidden text is now visible

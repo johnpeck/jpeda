@@ -1,0 +1,13 @@
+\section{Engineering change orders (ECOs)}
+
+
+\subsection{Changing part footprints}
+The PCB file format contains raw element (footprint) code and not file paths.  Thus, changes to footprint files will not change layout files.  If you need to change a footprint, delete the bad footprint and save your layout file.  Run \texttt{gsch2pcb}, specifying your current layout file as the output file.  The program will generate a new file containing the appropriately named missing footprint read from its source.  This new layout file information can be brought into your current layout, thereby updating the footprint.  You'll be told exactly what to do when \texttt{gsch2pcb} is run.
+
+
+\subsection{ECOs that affect the netlist or BOM}
+ECOs that affect the netlist or BOM must be recorded on both the schematic pages where they apply and in a new BOM.  The procedure is as follows:
+\begin{enumerate}  
+	\item Add a note on the schematic under a ``Changes on this page'' heading, and place a label referring to the note next to the affected parts or nets.
+	\item Edit the BOM within gnumeric to reflect the change.  Append \verb8_eco8 to the BOM filename.  Multiple levels of changes won't be tracked -- all ECOs just overwrite the most recent BOM.
+\end{enumerate}     

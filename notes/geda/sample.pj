@@ -1,0 +1,3 @@
+schematics one.sch two.sch
+output-name board
+elements-dir /home/john/audio/geda_resources/jps_footprints

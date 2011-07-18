@@ -1,0 +1,45 @@
+\section{Kit and order generation}
+The scripts \texttt{kitgen.py} and \texttt{buygen.py} can help with building kits and generating orders for vendors.  The design flow is as follows:
+
+\subsection{Configure \texttt{kitgen.py}}
+    \begin{itemize}
+        \item Make sure the relative path from the \textbf{scripts} directory to the schematics directory is correct.
+        \item Set the \textit{kitnum} variable to correspond to a new kit.
+        \item Set the \textit{kitqty} variable used to set the number of units to be built.
+        \item Make sure the name of your description file is correct.
+    \end{itemize}
+    \filesnip{buttprog/eda/scripts/kitgen.py}{\verbatiminput{kitgen_config.txt}}
+
+\subsection{Run the kitgen script}
+    \nailnote{You can create a symbolic link to the script in the schematics directory using
+        \boxcmd{\$ ln -s ../../eda/scripts/kitgen.py kitgen.py}
+        ...and any file paths you've entered can stay the same.  The script will always refer to files relative to the \textbf{scripts} directory.}
+    \usercmd{python kitgen.py}{\verbatiminput{kitgen_output.txt}}
+
+
+\subsection[Fill the kit by hand]{Edit the \texttt{kitx/kitx\_fill.dat} file with emacs to fill the kit by hand}
+This fill file will be clobbered every time kitgen is run.  This is on purpose, as kitgen has no way of determining what has changed in the schematic file.  When new parts come in to fill shortages, the whole kit needs to be filled all over again.  This is the only way the kit will reflect the latest schematic.
+\nailnote{Resist the urge to print out the fill file and write in quantities by hand.  This basically ensures that the kit will be out-of-date with respect to the schematic.}
+
+\faqnote{What if I have parts with long lead times? Is there a way to track the status of a kit?}
+
+\subsection{Process the \texttt{kitx/kitx\_build.tex} file with \LaTeX}
+The \texttt{kitgen.py} script will generate a \texttt{kitx/kitx\_build.tex} file for use in populating circuit boards.  This file can be processed into a pdf with the sequence:
+    \boxcmd{\$ latex kitx/kitx\_build.tex \\
+            \$ dvips -t letter kitx/kitx\_build.dvi -o \\
+            \$ ps2pdf kitx/kitx\_build.ps}
+
+\subsection{Configure \texttt{buygen.py}}
+    \begin{itemize}
+        \item Make sure the relative path from the \textbf{scripts} directory to the schematics directory is correct.
+        \item Make sure all the vendor files you'd like to use are entered.
+    \end{itemize}
+    \filesnip{buttprog/eda/scripts/buygen.py}
+            {\verbatiminput{buygen_config.txt}}
+
+\subsection{Run the buygen script}
+This will create the summary file \texttt{kitx/kitx\_summary.dat} if it hasn't been created already.  This file may have repeated parts in it, since buygen just blindly throws every part number match between the shortage list and the vendor files into the summary file.  You then have to choose which vendor you'd like to source the repeated part, and remove the others.  This is done by editing the summary file.
+    \usercmd{python buygen.py}{\verbatiminput{buygen_output.txt}}
+
+\subsection[Edit the summary file]{Edit the summary file with emacs to remove repeated vendors}
+The \texttt{kitx/kitx\_summary.dat} file will have a ``remove'' column.  Placing an ``x'' in any row's remove column will cause that row to be deleted the next time buygen is run.  Buygen will issue \texttt{--fix-->} lines until all the repeats have been removed.

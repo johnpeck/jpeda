@@ -1,0 +1,43 @@
+\section{Writing a udev rule}
+When something programmed to be a USB communications device class
+(CDC) device is plugged into the USB port, \textbf{udev}
+will work with \textbf{devfs} to position the device's node in linux's
+\texttt{/dev} directory\footnotemark{}.  The node name will be
+\texttt{ttyACM0} the first time the device is plugged in, but will
+increment to \texttt{ttyACM1} or higher as the device is hotplugged.
+This makes communicating with the device confusing.  A \textbf{udev}
+can simplify things by creating a static symbolic link to this dynamic
+node.
+
+\footnotetext{Note that you must have USB modem (CDC ACM) drivers either
+built into your kernel or built as a module for the kernel to
+recognize your device.  The relevant checkbox in the kernel
+configuration menu is at \texttt{Device drivers} $\rightarrow$
+\texttt{USB support} $\rightarrow$ \texttt{USB Modem (CDC ACM) support}}
+
+\textbf{Udev} rules live in the \texttt{/etc/udev/rules.d} directory,
+with their filenames beginning with numbers.  Rules are assigned using
+the number beginning the filename, with lower numbers being assigned
+first.  So rules called out in \texttt{10-somerules.rules} will be
+assigned before and take precedence over those in
+\texttt{20-morerules.rules}.  I have a file called
+\texttt{10-jps.rules}, where 10 is lower than any other file number in
+the \texttt{rules.d} directory.
+
+Rules themselves must contain a match and an action.  My rule file
+contains
+\filesnip{/etc/udev/rules.d/10-jps.rules}
+{
+    \# The CDC demo\\
+    KERNEL=="ttyACM*", SYMLINK+="avr\_tty"
+}
+where commented lines begin with a \#.  This rule tells \textbf{udev}
+to assign the symbolic link \texttt{avr\_tty} to anything the kernel
+wants to call \texttt{ttyACM*}.  This causes all of \texttt{ttyACM0},
+\texttt{ttyACM1}, and so on to be given the same symbolic link in the
+\texttt{/dev} directory.
+
+When your rules are written,
+\usercmd{udevadm control --reload-rules}{\vspace{-\baselineskip}}
+will make them active.
+

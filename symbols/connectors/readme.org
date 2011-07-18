@@ -1,0 +1,2 @@
+* BNC connectors
+** [[file:bnc_pcb_in.sym][bnc_pcb_in]] is a right-angle pcb-mount bnc connector.

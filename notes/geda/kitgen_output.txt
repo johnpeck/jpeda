@@ -1,0 +1,10 @@
+* /home/john/projects/jrr/buttprog/reva/schematics/kit6 already exists.  I'll overwrite it.
+-------------------Output from gnetlist-------------------
+Loading schematic [/home/john/projects/jrr/buttprog/reva/schematics/buttprog.sch]
+----------------------------------------------------------
+* Found 21 parts.
+* Fill kit by editing kit6_fill.dat with emacs.  Then run buygen.py
+  to see what needs to be ordered.
+* Assembly BOM written to kit6_build.bom and kit6_build.tex. Execute 'latex 
+  kit6_build.tex' to process .tex file.
+

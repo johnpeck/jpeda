@@ -1,0 +1,77 @@
+\section{Working with \texttt{gschem}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Keyboard shortcuts
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Keyboard shortcuts}
+Some keyboard shortcuts are shown in table \ref{shortcuts}.  A comprehensive list is brought up with \textsl{Help} $\rightarrow$ \textsl{Hotkeys} or with the \texttt{hh} key sequence.
+
+\begin{table}[h]
+	\begin{center}
+	\setlength{\extrarowheight}{0.5cm}
+		\begin{tabular}{cl}
+		Key sequence	&Function\\
+		\hline
+		z		&Zoom in\\
+		Shift + z	&Zoom out\\
+		en		&Show/hide invisible text\\
+		l		&Start drawing a line (like for a symbol)\\
+		s		&Exit whatever mode you're in and go back to select mode\\
+		m		&Begin moving a selected object\\
+		ex		&Bring up the single attribute editor within a schematic\\
+		\end{tabular}
+		\caption{gschem keyboard shortcuts \label{shortcuts}}
+	\end{center}
+\end{table}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Adding text to schematics
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Adding text}
+The key combination \texttt{a}$\rightarrow$\texttt{t} brings up a text entry box.  Entered text can be edited using the \texttt{e}$\rightarrow$\texttt{x} sequence.  Nice-looking text sizes are shown in table \ref{text_sizes}.
+
+\begin{table}[ht]
+	\begin{center}
+		\begin{tabular}{|c|c|}
+		\hline
+		\textbf{Text}	&\textbf{Size}\\
+		\hline \hline
+		Comments	&12\\
+		\hline
+		Headings, like ``notes'' or ``changes on this page''	&18\\
+		\hline
+		\end{tabular}
+		\caption{Text sizes for notes on schematic pages\label{text_sizes}}
+	\end{center}
+\end{table}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Making pretty prints
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Making pretty prints}
+You can print to postscript with \textsl{File} $\rightarrow$ \textsl{Print} and then choosing a filename.  You can print from the command line using
+\boxcmd{\$ gschem -s /usr/share/gEDA/scheme/print.scm -o output.ps -p input.sch}
+where \texttt{input.sch} is the schematic to be printed to \texttt{output.ps}. 
+
+\subsubsection{Fixing text alignment}
+Pieces of text have alignment marks associated with them.  When the text is printed, these marks will stay put as the text grows or shrinks to accomodate whatever fonts are used by the output device.  You'll thus want to align the alignment marks if you want text objects to line up in your print.  There are two tricks to this:
+
+
+
+\begin{enumerate}
+	\item Rotate the text until the alignment mark is where you want it.  Notice that \texttt{gschem} refuses to write text upside down.
+	\item Use the \texttt{ex} sequence to edit the alignment mark position of a text attribute associated with a symbol.
+\end{enumerate}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Miscellaneous notes
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Miscellaneous notes}
+
+\begin{itemize}
+	\item 
+\end{itemize}

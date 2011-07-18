@@ -1,0 +1,17 @@
+-*- mode: Org; mode: Auto-Revert; -*-
+#+STARTUP: align
+#
+# Jameco part mapping
+#
+# Add new parts at the bottom of the table.
+# Use tabs to cycle through columns and to 
+# move to next row.
+|-
+| JRR part | Jameco part |
+|-
+|11-3|2012216|
+|-
+|17-2|380202|
+|-
+|
+|-

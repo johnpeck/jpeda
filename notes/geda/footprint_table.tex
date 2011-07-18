@@ -1,0 +1,301 @@
+\newlength{\tablepad}
+\setlength{\tablepad}{0.2cm}
+
+\newlength{\namespace}	%Width of footprint name column
+\setlength{\namespace}{8cm}
+
+\newlength{\modspace}	%Width of modifications column
+\setlength{\modspace}{3cm}
+
+\newlength{\descspace}	%Width of description column
+\setlength{\descspace}{3cm}
+
+
+\singlespacing
+
+\begin{center}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Define the longtable
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\begin{longtable}{cccccc >{\scriptsize}p{3cm}}
+%\begin{longtable}{>{\scriptsize}p{3cm} >{\scriptsize}p{6cm} >{\scriptsize}p{4cm} >{\scriptsize}p{3cm} >{\scriptsize}p{3cm} >{\scriptsize}p{3cm} >{\scriptsize}p{3cm} >{\scriptsize}p{3cm} >{\scriptsize}p{3cm} >{\scriptsize}p{3cm}}
+%\begin{longtable}{>{\scriptsize}p{7cm} c c c c}
+\begin{longtable}{|c|c|c|}
+%\hline
+\multicolumn{3}{c}{Supported footprints and their \texttt{Luciani.org} origens}\\
+\hline
+
+&&\\
+\begin{minipage}[c]{\namespace}
+\begin{centering}
+Footprint name / \\
+Luciani.org source \\
+\end{centering}
+\end{minipage}
+&Modifications	
+&Description\\ 
+&&\\ \hline	\hline	
+\endfirsthead%now we're done defining the firt table heading
+
+%\hline
+\multicolumn{3}{c}{\small \sl Continued from previous page}\\
+\hline
+
+&&\\
+\begin{minipage}[c]{\namespace}
+\begin{centering}
+Footprint name / \\
+Luciani.org source \\
+\end{centering}
+\end{minipage}
+&Modifications	
+&Description\\ 
+&&\\ \hline	\hline	
+\endhead%now we're done defining the table heading on everything but the first page
+
+\multicolumn{3}{c}{\small \sl Continued on next page}\\
+\endfoot%now we're done defining the foot of tables right before a page break
+
+\hline
+\caption{Supported footprints and their \texttt{Luciani.org} origens\label{footprint_table}}
+\endlastfoot%now we're done defining the last foot of the table
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Start the table data
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%1206 resistor
+\begin{minipage}[c]{\namespace}
+\begin{center}
+\texttt{1206\_resistor.fp} \\
+\texttt{1206} \\
+\end{center}
+\end{minipage}
+&\begin{minipage}[c]{\modspace}
+\centering Standard
+\end{minipage}	
+&\begin{minipage}[c]{\descspace}
+\vspace{\tablepad}
+1206-size surface mount resistor
+\vspace{\tablepad}
+\end{minipage}\\ \hline
+
+%1206 capacitor
+\begin{minipage}[c]{\namespace}
+\begin{center}
+\texttt{1206\_capacitor.fp} \\
+\texttt{1206} \\
+\end{center}
+\end{minipage}		
+&\begin{minipage}[c]{\modspace}
+\centering Standard
+\end{minipage}	
+&\begin{minipage}[c]{\descspace}
+\vspace{\tablepad}
+\raggedright
+1206-size surface mount capacitor
+\vspace{\tablepad}
+\end{minipage}\\ \hline
+
+%SO-8 IC
+\begin{minipage}[c]{\namespace}
+\begin{center}
+\vspace{\tablepad}
+\texttt{so\_8.fp} \\
+\texttt{SO8} \\
+\vspace{\tablepad}
+\end{center}
+\end{minipage}	
+&\begin{minipage}[c]{\modspace}
+\centering Convert to square brackets, make pin 1 square
+\end{minipage}	
+&\begin{minipage}[c]{\descspace}
+\vspace{\tablepad}
+\raggedright
+SO-8 IC package
+\vspace{\tablepad}
+\end{minipage}\\ \hline
+
+
+
+%Radial-leaded part with specific dimensions
+\begin{minipage}[c]{\namespace}
+\begin{center}
+\texttt{rad\_390d\_200ls\_24ld.fp} \\
+\texttt{CAPPR-500P-1000D-1250L-60d\_\_Nichicon} \\
+\end{center}
+\end{minipage}
+&\begin{minipage}[c]{\modspace}
+\centering None
+\end{minipage}
+&\begin{minipage}[c]{\descspace}
+\vspace{\tablepad}
+\raggedright
+Footprint for a radial-leaded part with 0.39 inch (circular) body diameter, 0.2 inch lead spacing, and 0.024 inch lead diameter
+\vspace{\tablepad}
+\end{minipage}\\ \hline
+
+%Radial-leaded part with specific dimensions
+\begin{minipage}[c]{\namespace}
+\begin{center}
+\texttt{rad\_500d\_200ls\_24ld.fp} \\
+\texttt{CAPPR-500P-1250D-1500L-60d\_\_Nichicon} \\
+\end{center}
+\end{minipage}
+&\begin{minipage}[c]{\modspace}
+\centering None
+\end{minipage}
+&\begin{minipage}[c]{\descspace}
+\vspace{\tablepad}
+\raggedright
+Footprint for a radial-leaded part with 0.39 inch (circular) body diameter, 0.2 inch lead spacing, and 0.024 inch lead diameter
+\vspace{\tablepad}
+\end{minipage}\\ \hline
+
+%Surface-mount TO-220 for high-brightness LEDs
+\begin{minipage}[c]{\namespace}
+\begin{center}
+\texttt{to\_220sm.fp} \\
+\texttt{} \\
+\end{center}
+\end{minipage}
+&\begin{minipage}[c]{\modspace}
+\centering None
+\end{minipage}
+&\begin{minipage}[c]{\descspace}
+\vspace{\tablepad}
+\raggedright
+1W surface mount TO-220 LED package
+\vspace{\tablepad}
+\end{minipage}\\ \hline
+
+%SOD-123 diodes
+\begin{minipage}[c]{\namespace}
+\begin{center}
+\texttt{sod\_123.fp} \\
+\texttt{SOD123-370L1-160W\_\_On-Semiconductor} \\
+\end{center}
+\end{minipage}
+&\begin{minipage}[c]{\modspace}
+\centering Standard, reverse pin numbers
+\end{minipage}
+&\begin{minipage}[c]{\descspace}
+\vspace{\tablepad}
+\raggedright
+SOD-123 surface-mount diode
+\vspace{\tablepad}
+\end{minipage}\\ \hline
+
+%1mH inductor
+\begin{minipage}[c]{\namespace}
+\begin{center}
+\texttt{ax\_900l\_455w\_1500ls\_32ld.fp} \\
+None \\
+\end{center}
+\end{minipage}
+&\begin{minipage}[c]{\modspace}
+\centering Standard
+\end{minipage}
+&\begin{minipage}[c]{\descspace}
+\vspace{\tablepad}
+\raggedright
+Footprint for an axial-leaded part with 0.9 inch body length, 0.455 inch width, 1.5 inches between leads, and 0.032 inch lead diameter.  This could be that big inductor used on the LED driver.
+\vspace{\tablepad}
+\end{minipage}\\ \hline
+
+%4-pin Mill-Max header
+\begin{minipage}[c]{\namespace}
+\begin{center}
+\texttt{hdr\_100p\_4c\_1r.fp} \\
+\texttt{CON\_HDR-254P-4C-1R-4N\_\_Mill-Max\_800-Series} \\
+\end{center}
+\end{minipage}
+&\begin{minipage}[c]{\modspace}
+\centering Standard
+\end{minipage}
+&\begin{minipage}[c]{\descspace}
+\vspace{\tablepad}
+\raggedright
+Footprint for a 4-pin male header from the Mill-Max 800 series.  0.1-inch pin pitch, 1 row and 4 columns.
+\vspace{\tablepad}
+\end{minipage}\\ \hline
+
+%DC barrel connector
+\begin{minipage}[c]{\namespace}
+\begin{center}
+\texttt{dc\_barrel\_smt.fp} \\
+\texttt{CON\_\_CUI\_PJ-002AH-SMT} \\
+\end{center}
+\end{minipage}
+&\begin{minipage}[c]{\modspace}
+\centering Standard
+\end{minipage}
+&\begin{minipage}[c]{\descspace}
+\vspace{\tablepad}
+\raggedright
+SMT dc barrel power connector with integrated switch.
+\vspace{\tablepad}
+\end{minipage}\\ \hline
+
+	%Number 6 mounting hole
+	\begin{minipage}[c][2\height][c]{\namespace}
+		\begin{center}
+			\texttt{6\_32\_mthole.fp} \\
+			None\\
+		\end{center}
+	\end{minipage}
+	&\begin{minipage}[c]{\modspace}
+		\centering None
+	\end{minipage}
+	&\begin{minipage}[c][2\height][c]{\descspace}
+		\raggedright
+		Mounting hole for \#6 screws
+	\end{minipage}\\ \hline
+	
+	%2-pin MTA100 header
+	\begin{minipage}[c][2\height][c]{\namespace}
+		\begin{center}
+			\texttt{2pin\_mta100\_pol.fp} \\
+			None\\
+		\end{center}
+	\end{minipage}
+	&\begin{minipage}[c]{\modspace}
+		\centering None
+	\end{minipage}
+	&\begin{minipage}[c][2\height][c]{\descspace}
+		\raggedright
+		2-pin polarized header for MTA100 plug
+	\end{minipage}\\ \hline	
+	
+	%SOT-23 surface-mount transistor 3-lead package
+	\begin{minipage}[c][2\height][c]{\namespace}
+		\begin{center}
+			\texttt{sot\_23.fp} \\
+			\verb6SOT23-95P-240L1-3N__On-Semi_318-08-Package6\\
+		\end{center}
+	\end{minipage}
+	&\begin{minipage}[c]{\modspace}
+		\centering Standard
+	\end{minipage}
+	&\begin{minipage}[c][2\height][c]{\descspace}
+		\raggedright
+		3-lead surface mount transistor
+	\end{minipage}\\ \hline	
+	
+	%SOT-223 surface mount discrete with heat sink tab
+	\begin{minipage}[c][2\height][c]{\namespace}
+		\begin{center}
+			\texttt{sot\_223.fp} \\
+			None
+		\end{center}
+	\end{minipage}
+	&\begin{minipage}[c]{\modspace}
+		\centering Standard
+	\end{minipage}
+	&\begin{minipage}[c][2\height][c]{\descspace}
+		\raggedright
+		3-pin surface mount discrete with heat sink tab
+	\end{minipage}\\ \hline			
+
+\end{longtable}
+\end{center}
+
+\doublespacing

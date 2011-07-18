@@ -1,0 +1,14 @@
+gEDA/gattrib version 20060123
+gEDA/gattrib comes with ABSOLUTELY NO WARRANTY; see COPYING for more details.
+This is free software, and you are welcome to redistribute it under certain
+conditions; please see the COPYING file for more details.
+
+Read system-gafrc file [/usr/share/gEDA/system-gafrc]
+Did not find optional ~/.gEDA/gafrc file [/home/john/.gEDA/gafrc]
+Did not find optional local gafrc file [/home/john/audio/geda_resources/geda_notes/gafrc]
+Read system-gattribrc file [/usr/share/gEDA/system-gattribrc]
+Did not find optional ~/.gEDA/gattribrc file [/home/john/.gEDA/gattribrc]
+Did not find optional local gattribrc file [/home/john/audio/geda_resources/geda_notes/gattribrc]
+Loading file [/home/john/audio/geda_resources/gschem_parts/1000p_1206.sym]
+Did not find specified /home/john/audio/geda_resources/gschem_parts/gafrc file [/home/john/audio/geda_resources/gschem_parts/gafrc]
+Opened file [/home/john/audio/geda_resources/gschem_parts/1000p_1206.sym]

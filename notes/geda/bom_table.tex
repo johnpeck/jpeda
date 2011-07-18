@@ -1,0 +1,90 @@
+%Set length for width of description column
+\newlength{\descwidth}
+\setlength{\descwidth}{11cm}
+
+%Set length for width of script column
+\newlength{\namewidth}
+\setlength{\namewidth}{3cm}
+
+%Set extra height for cells
+\newlength{\heightpad}
+\setlength{\heightpad}{0.5cm}
+
+\begin{table}[ht]
+	\begin{center}
+		\begin{tabular}{|c|c|}
+			\hline
+			
+			%The column headings
+			\begin{minipage}[c][\height+\heightpad][c]{\namewidth}
+    				\begin{center}
+    					Script
+    				\end{center}
+			\end{minipage}		
+			
+			&\begin{minipage}[c][\height+\heightpad][c]{\descwidth}
+    				\begin{center}
+    					Description
+    				\end{center}
+			\end{minipage}\\
+			\hline \hline
+			
+			%bom
+			\begin{minipage}[c][\height+\heightpad][c]{\namewidth}
+ 				\begin{center}
+    					\texttt{bom}
+    				\end{center}
+			\end{minipage}
+			&\begin{minipage}[c][\height+\heightpad][c]{\descwidth}
+    				Reads an ``attribs'' file and generates a bill of materials with each component on a separate line. Columns are seperated by tab characters. Lines are not sorted.	
+			\end{minipage}\\
+			\hline
+			
+			%bom2
+			\begin{minipage}[c][\height+\heightpad][c]{\namewidth}
+ 				\begin{center}
+    					\texttt{bom2}
+    				\end{center}
+			\end{minipage}
+			&\begin{minipage}[c][\height+\heightpad][c]{\descwidth}
+				Reads an ``attribs'' file and generates a bill of materials grouping components with the same value attribute on the same line.  Columns are separated by colons.  Different items in the same column are seperated by a comma character.  Later versions of this backend have a quantity column appended to whatever appears in \verb8attribs8.  Find the latest version at \verb8git.gpleda.org8.
+			\end{minipage}\\
+			\hline			
+			
+			%partslist1
+			\begin{minipage}[c][\height+\heightpad][c]{\namewidth}
+ 				\begin{center}
+    					\texttt{partslist1}
+    				\end{center}
+			\end{minipage}
+			&\begin{minipage}[c][\height+\heightpad][c]{\descwidth}
+				Creates a bill of materials listing each component on a separate line.  Unlike the \texttt{bom} script, this always produces ``refdes,'' ``device,'' ``value,'' ``footprint,'' and ``quantity'' columns.  No attribute file is required.  Lines are sorted alphabetically by refdes.  Since every line contains just one part, the quantity is always 1.
+			\end{minipage}\\
+			\hline	
+			
+			%partslist2
+			\begin{minipage}[c][\height+\heightpad][c]{\namewidth}
+ 				\begin{center}
+    					\texttt{partslist2}
+    				\end{center}
+			\end{minipage}
+			&\begin{minipage}[c][\height+\heightpad][c]{\descwidth}
+				Similar to \texttt{partslist1}, but lines are sorted by the value of the device attribute and not the refdes.
+			\end{minipage}\\
+			\hline						
+			
+			%partslist3
+			\begin{minipage}[c][\height+\heightpad][c]{\namewidth}
+ 				\begin{center}
+    					\texttt{partslist3}
+    				\end{center}
+			\end{minipage}
+			&\begin{minipage}[c][\height+\heightpad][c]{\descwidth}
+				Groups components with the same value on the same line, as in \texttt{bom2}.  Lines are sorted by the value of the device attribute. The fourth column reports the number of parts in a line. Columns are seperated by the tab character, items by space.
+			\end{minipage}\\
+			\hline				
+
+		\end{tabular}
+		\caption{Scripts for BOM creation\label{bom_scripts}}
+	\end{center}
+\end{table}

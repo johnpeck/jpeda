@@ -1,0 +1,95 @@
+\section{Footprint notes}
+\label{footprint_section}
+
+\begin{itemize}
+	\item To print footprints at 1:1 scale, use
+	\begin{center}
+		\begin{minipage}{12cm}
+			\verb8pcb -x ps --psfile "output.ps" --media Letter --show-legend <footprint>8
+		\end{minipage}
+	\end{center}
+	to dump all the footprint layers to the ``output.ps'' postscript file.
+	
+	\item Holes for through-hole parts should be 15 mils larger than the pin diameter
+
+	\item The ``clearance'' number is the anti-copper width/diameter to be added around pads, pins, or vias that intersect a copper plane.  This isolates them from the plane.  The number is added to the thickness number to get the total outer dimension of the anti-copper feature.  Using 2000 here gives 10 mils of isolation, which is fine for plated holes.  Unplated holes require 2400, for 12 mils of isolation.
+
+	\item Solder mask reliefs should be at least 3 mils.  For pads and pins, the number is the overall solder mask opening -- the ``thickness'' plus 600.
+
+	\item Use 10 mil line thicknesses for silkscreen part notes and elementlines. 
+
+	\item Measuring distances in PCB: use $< ctrl >$m to place a reference crosshair for relative coordinates
+\end{itemize}
+
+\subsection{John Luciani's footprints}
+John Luciani has a nice collection of footprints for PCB at
+\begin{center}
+	\begin{minipage}{3cm}
+		\verb8www.luciani.org8
+	\end{minipage}
+\end{center}
+I take his footprints and make some standard changes before they go in my footprint directory.  The original footprint code is shown in Fig.\ \ref{luciani_1206}.
+
+\begin{figure}[ht]
+	\begin{center}
+		\begin{minipage}{10cm}
+			\verbatiminput{luciani_1206.fp}
+		\end{minipage}
+		\caption{Luciani's \texttt{1206} footprint code\label{luciani_1206}}
+	\end{center} 
+\end{figure}
+
+First of all, remember that units are 1/100 of mils, since all definitions are in square brackets instead of parenthesis.  Thus, 1000 $\rightarrow$ 10 mils.  The standard changes I make are:
+\newcounter{modcount}
+\begin{list}{\arabic{modcount}}{\usecounter{modcount}}
+
+	\item The first field of the element line becomes \verb8""8 instead of \texttt{0x0}.  These are the same thing, but using \verb8""8 is more consistent with other documentation I have.
+	\item The second field of the element line becomes \verb8""8 instead of \texttt{SMD}.  This field is clobbered by \texttt{gshem2pcb}, so it doesn't matter what the initial value is.  Having something here is a distraction.
+	\item The fifth and sixth fields of the element line become 1000. These fields are the initial placement of the footprint on the pcb, and 1000 puts them on the board by 10 mils.   
+\end{list}
+
+Figure \ref{jps_1206} shows my resulting footprint.
+\begin{figure}[ht]
+	\begin{center}
+		\begin{minipage}{10cm}
+			\verbatiminput{jps_1206.fp}
+		\end{minipage}
+		\caption{My \texttt{1206} footprint code\label{jps_1206}}
+	\end{center} 
+\end{figure}
+
+And here are some more miscellaneous notes:
+\begin{itemize}
+	\item \texttt{Luciani.org} footprints are named using dimensions in 1/100 of mm.  Thus, multiply inch dimensions by 2540 to determine his equivalents.
+\end{itemize}
+
+\subsection{Leaded footprint example}
+An example of a good leaded component is shown in Fig.\ \ref{leaded_example}.  I include this just because Luciani's footprint for this type of element used deprecated syntax.
+\begin{figure}[ht]
+	\begin{center}
+		\begin{minipage}{10cm}
+			\verbatiminput{leaded_example.fp}
+		\end{minipage}
+		\caption{My \texttt{AX\_900L\_455W\_1500LS\_32LD} footprint code.  This is for an axial-leaded part with 0.9 inch body length, 0.455 inch width, 1.5 inches between leads, and 0.032 inch lead diameter.  This could be that big inductor used on the LED driver.\label{leaded_example}}
+	\end{center} 
+\end{figure}
+
+\clearpage
+\subsection{Modifying existing footprints}
+
+\begin{enumerate}
+	\item Start up PCB with no arguments to bring up an empty layout.
+	\item \menuitem{File} $\rightarrow$ \menuitem{Load element data to paste-buffer}.  Select the footprint (PCB calls them footprints before they're put on the board, and elements after) you want to modify, and place it somewhere.
+	\item Use the select tool to select the element, then \menuitem{Buffer} $\rightarrow$ \menuitem{Cut selection to buffer}.  All the menus will be grayed out as PCB waits for you to choose where you'd like to ``grip'' the selected items.  I like to choose the diamond-shaped insertion point marker at this point.  After choosing, use \kbkey{esc} to release the objects.
+	\item Select \menuitem{Buffer} $\rightarrow$ \menuitem{Break buffer elements to pieces}.
+	\item Select \menuitem{Buffer} $\rightarrow$ \menuitem{Paste buffer to layout}.  The footprint will look different, because it won't have pads anymore -- just traces where the pads used to be (only fully-formed footprints have pads, and we broke up our footprint).  Place the collection of pieces somewhere in the layout.
+	\item Make the modifications you want to make.  Hover over the traces that will become pads and use \kbkey{n} to assign pin numbers.  Of course, right now they'll be called ``linenames.''
+	\item Use the selection tool to select everything you want to be in the new footprint.
+	\item Select \menuitem{Buffer} $\rightarrow$ \menuitem{Cut selection to buffer}.  Select a gripping point and use \kbkey{esc} to release the objects.  This gripping point will become the insertion point of the new footprint -- marked with a diamond-shape.  
+	\item Select \menuitem{Buffer} $\rightarrow$ \menuitem{Convert buffer to element}.
+	\item Select \menuitem{Buffer} $\rightarrow$ \menuitem{Paste buffer to layout}.  Now you'll have pads instead of traces.  Hovering over a pad and pressing \kbkey{q} will toggle pads between round and square shapes.  Hovering over a pad and pressing \kbkey{d} will toggle pin number visibility.  You can't change the pin numbers at this point, but it's nice to make sure they're correct.  Hovering over the insertion point and pressing \kbkey{n} will prompt you for an element name.  Whatever name you enter will be clobbered by the reference designator set by gsch2pcb, but it's nice to choose a default position for the label and the text size at this point.  The keys \kbkey{s} and \kbkey{shift}\kbkey{s} will adjust text size.
+	
+	\item When you're satisfied with your footprint, select \menuitem{Buffer} $\rightarrow$ \menuitem{Cut selection to buffer}.  Select your insertion point again and use \kbkey{esc} to release the object.
+	\item Save the footprint with \menuitem{Buffer} $\rightarrow$ \menuitem{Save buffer elements to file}.  I like to end my footprint filenames with an fp extension.  You're done!
+\end{enumerate}
+

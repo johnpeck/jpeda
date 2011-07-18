@@ -1,0 +1,33 @@
+%netlist
+\section{Working with \texttt{gnetlist}}
+
+\subsection{Generating a netlist}
+
+The command
+\begin{center}
+	\texttt{gnetlist -g PCB <input.sch> -o <output.net>}
+\end{center}
+will create a netlist readable by both you and PCB. The file will have three columns: net name, starting pin, and ending pin.
+
+
+\subsection{Generating a bill of materials (BOM)}
+The \texttt{-g} flag for gnetlist allows you to specify a guile script to be run.  Scripts for BOM creation are located in \verb8/usr/share/gEDA/scheme8, and some are described in table \ref{bom_scripts}.
+\input{bom_table}
+
+
+For example, the command
+\begin{center}
+	\texttt{gnetlist -g bom <input.sch> -o <output.bom>}
+\end{center}
+will generate a BOM.  You must have a file called ``attribs'' in the directory from which gnetlist is invoked.  This file should just contain a column of attributes you want included in the BOM.  An example is:
+
+
+\begin{center}
+\begin{minipage}{2cm}
+\verbatiminput{attribs}
+\end{minipage}
+\end{center}
+
+
+\subsection{General notes}
+

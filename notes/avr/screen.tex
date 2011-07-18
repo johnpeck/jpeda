@@ -1,0 +1,21 @@
+\section{Using \textbf{screen} for a serial console}
+The \textbf{screen} utility makes setting up a serial console easy.  A
+basic invocation is
+\usercmd{screen /dev/ttywhatever 9600}{}
+where the baud rate for the session is set to 9600\footnotemark{}.  If more
+parameters are needed, they can be added in a comma-separated list as
+in
+\usercmd{screen /dev/ttywhatever 9600,cs8,-parenb,-cstopb,-hupcl}{}
+where now communication is explicitly configured to use 9600 baud, 8
+data bits per byte, no parity bit, one stop bit, and to ignore hangup
+signals.  The parameters in the list follow notation used by the
+\textbf{stty} utility.  An easy way to explicitly set all the
+parameters is thus to invoke it using
+\usercmd{stty -F /dev/ttywhatever -a}{\verbatiminput{stty_out.txt}}
+which will show you how the serial port is configured with the same
+parameters taken by \textbf{screen}.
+
+\footnotetext{\textbf{udev} sets the group ownership of the CDC tty
+node to \texttt{uucp}, and I don't seem to be able to change this with
+a custom rule.  I thus have to add users to the \texttt{uucp} group
+for these \textbf{screen} commands to work.}

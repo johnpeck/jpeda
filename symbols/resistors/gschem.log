@@ -1,0 +1,55 @@
+gEDA/gschem version 1.4.3.20081231
+gEDA/gschem comes with ABSOLUTELY NO WARRANTY; see COPYING for more details.
+This is free software, and you are welcome to redistribute it under certain
+conditions; please see the COPYING file for more details.
+
+Read system-gafrc file [/usr/share/gEDA/system-gafrc]
+Did not find optional ~/.gEDA/gafrc file [/home/john/.gEDA/gafrc]
+Did not find optional local gafrc file [/home/john/projects/pencils/eda/symbols/resistors/gafrc]
+Read system-gschemrc file [/usr/share/gEDA/system-gschemrc]
+Did not find optional ~/.gEDA/gschemrc file [/home/john/.gEDA/gschemrc]
+Did not find optional local gschemrc file [/home/john/projects/pencils/eda/symbols/resistors/gschemrc]
+Read init scm file [/usr/share/gEDA/scheme/gschem.scm]
+Loading schematic [/home/john/projects/pencils/eda/symbols/resistors/3k48_1206.sym]
+Did not find specified gafrc file [/home/john/projects/pencils/eda/symbols/resistors/gafrc]
+Hidden text is now visible
+Did not find specified gafrc file [/home/john/projects/pencils/eda/symbols/resistors/gafrc]
+Loading schematic [/home/john/projects/pencils/eda/symbols/resistors/760m_1206_horz.sym]
+Did not find specified gafrc file [/home/john/projects/pencils/eda/symbols/resistors/gafrc]
+Loading schematic [/home/john/projects/pencils/eda/symbols/resistors/760m_1206_horz.sym]
+Did not find specified gafrc file [/home/john/projects/pencils/eda/symbols/resistors/gafrc]
+Closing [/home/john/projects/pencils/eda/symbols/resistors/760m_1206_horz.sym]
+Did not find specified gafrc file [/home/john/projects/pencils/eda/symbols/resistors/gafrc]
+Did not find specified gafrc file [/home/john/projects/pencils/eda/symbols/resistors/gafrc]
+Did not find specified gafrc file [/home/john/projects/pencils/eda/symbols/resistors/gafrc]
+Did not find specified gafrc file [/home/john/projects/pencils/eda/symbols/resistors/gafrc]
+Did not find specified gafrc file [/home/john/projects/pencils/eda/symbols/resistors/gafrc]
+Did not find specified gafrc file [/home/john/projects/pencils/eda/symbols/resistors/gafrc]
+Did not find specified gafrc file [/home/john/projects/pencils/eda/symbols/resistors/gafrc]
+Loading schematic [/home/john/projects/pencils/eda/symbols/resistors/10r0_1206_horz.sym]
+Did not find specified gafrc file [/home/john/projects/pencils/eda/symbols/resistors/gafrc]
+Loading schematic [/home/john/projects/pencils/eda/symbols/resistors/10r0_1206_horz.sym]
+Did not find specified gafrc file [/home/john/projects/pencils/eda/symbols/resistors/gafrc]
+Hidden text is now invisible
+Hidden text is now visible
+Loading schematic [/home/john/projects/pencils/eda/symbols/resistors/10r0_1206_horz.sym]
+Did not find specified gafrc file [/home/john/projects/pencils/eda/symbols/resistors/gafrc]
+Did not find specified gafrc file [/home/john/projects/pencils/eda/symbols/resistors/gafrc]
+Loading schematic [/home/john/projects/pencils/eda/symbols/resistors/10r0_1206_vert.sym]
+Did not find specified gafrc file [/home/john/projects/pencils/eda/symbols/resistors/gafrc]
+Closing [/home/john/projects/pencils/eda/symbols/resistors/10r0_1206_horz.sym]
+Did not find specified gafrc file [/home/john/projects/pencils/eda/symbols/resistors/gafrc]
+Loading schematic [/home/john/projects/pencils/eda/symbols/resistors/3k48_1206_vert.sym]
+Did not find specified gafrc file [/home/john/projects/pencils/eda/symbols/resistors/gafrc]
+Did not find specified gafrc file [/home/john/projects/pencils/eda/symbols/resistors/gafrc]
+Loading schematic [/home/john/projects/pencils/eda/symbols/resistors/69k6_1206_horz.sym]
+Did not find specified gafrc file [/home/john/projects/pencils/eda/symbols/resistors/gafrc]
+Hidden text is now invisible
+Hidden text is now visible
+Hidden text is now invisible
+Hidden text is now visible
+Did not find specified gafrc file [/home/john/projects/pencils/eda/symbols/resistors/gafrc]
+Loading schematic [/home/john/projects/pencils/eda/symbols/resistors/69k6_1206_vert.sym]
+Did not find specified gafrc file [/home/john/projects/pencils/eda/symbols/resistors/gafrc]
+Hidden text is now invisible
+Hidden text is now visible

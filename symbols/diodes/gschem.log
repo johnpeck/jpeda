@@ -1,0 +1,30 @@
+gEDA/gschem version 1.4.3.20081231
+gEDA/gschem comes with ABSOLUTELY NO WARRANTY; see COPYING for more details.
+This is free software, and you are welcome to redistribute it under certain
+conditions; please see the COPYING file for more details.
+
+Read system-gafrc file [/usr/share/gEDA/system-gafrc]
+Library name [io] already in use.  Using [io<1>].
+Library name [power] already in use.  Using [power<1>].
+Read ~/.gEDA/gafrc file [/home/john/.gEDA/gafrc]
+Did not find optional local gafrc file [/home/john/hobby/eda/symbols/diodes/gafrc]
+Read system-gschemrc file [/usr/share/gEDA/system-gschemrc]
+Did not find optional ~/.gEDA/gschemrc file [/home/john/.gEDA/gschemrc]
+Did not find optional local gschemrc file [/home/john/hobby/eda/symbols/diodes/gschemrc]
+Read init scm file [/usr/share/gEDA/scheme/gschem.scm]
+Loading schematic [/home/john/hobby/eda/symbols/diodes/sml_lx1610usbc.sym]
+Did not find specified gafrc file [/home/john/hobby/eda/symbols/diodes/gafrc]
+Hidden text is now visible
+Saved as [/home/john/hobby/eda/symbols/diodes/sml_lx1610_blue_vert.sym]
+Saved as [/home/john/hobby/eda/symbols/diodes/sml_lx1610_blue_horiz.sym]
+Did not find specified gafrc file [/home/john/hobby/eda/symbols/diodes/gafrc]
+Did not find specified gafrc file [/home/john/hobby/eda/symbols/diodes/gafrc]
+Loading schematic [/home/john/hobby/eda/symbols/diodes/sml_lx1610_blue_vert.sym]
+Did not find specified gafrc file [/home/john/hobby/eda/symbols/diodes/gafrc]
+Translating schematic [1000 1000]
+Saved [/home/john/hobby/eda/symbols/diodes/sml_lx1610_blue_vert.sym]
+Hidden text is now invisible
+WARNING: Snap grid size is not equal to 100!
+WARNING: If you are translating a symbol to the origin, the snap grid size should be set to 100
+Translating schematic [-1000 -700]
+Saved [/home/john/hobby/eda/symbols/diodes/sml_lx1610_blue_vert.sym]

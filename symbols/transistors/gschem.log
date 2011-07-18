@@ -1,0 +1,77 @@
+gEDA/gschem version 1.4.3.20081231
+gEDA/gschem comes with ABSOLUTELY NO WARRANTY; see COPYING for more details.
+This is free software, and you are welcome to redistribute it under certain
+conditions; please see the COPYING file for more details.
+
+Read system-gafrc file [/usr/share/gEDA/system-gafrc]
+Library name [io] already in use.  Using [io<1>].
+Library name [power] already in use.  Using [power<1>].
+Read ~/.gEDA/gafrc file [/home/john/.gEDA/gafrc]
+Did not find optional local gafrc file [/home/john/hobby/eda/symbols/transistors/gafrc]
+Read system-gschemrc file [/usr/share/gEDA/system-gschemrc]
+Did not find optional ~/.gEDA/gschemrc file [/home/john/.gEDA/gschemrc]
+Did not find optional local gschemrc file [/home/john/hobby/eda/symbols/transistors/gschemrc]
+Read init scm file [/usr/share/gEDA/scheme/gschem.scm]
+Loading schematic [/home/john/hobby/eda/symbols/transistors/ntf2955_horiz.sym]
+Did not find specified gafrc file [/home/john/hobby/eda/symbols/transistors/gafrc]
+Saved [/home/john/hobby/eda/symbols/transistors/ntf2955_horiz.sym]
+Translating schematic [2000 2000]
+Hidden text is now visible
+Translating schematic [4000 4000]
+Saved [/home/john/hobby/eda/symbols/transistors/ntf2955_horiz.sym]
+Loading schematic [/home/john/hobby/eda/symbols/transistors/ntf2955_horiz.sym]
+Did not find specified gafrc file [/home/john/hobby/eda/symbols/transistors/gafrc]
+Loading schematic [/home/john/hobby/eda/symbols/transistors/ntf2955_horiz.sym]
+Did not find specified gafrc file [/home/john/hobby/eda/symbols/transistors/gafrc]
+Loading schematic [/home/john/hobby/eda/symbols/transistors/ntf2955_horiz.sym]
+Did not find specified gafrc file [/home/john/hobby/eda/symbols/transistors/gafrc]
+Loading schematic [/home/john/hobby/eda/symbols/transistors/ntf2955_horiz.sym]
+Did not find specified gafrc file [/home/john/hobby/eda/symbols/transistors/gafrc]
+Loading schematic [/home/john/hobby/eda/symbols/transistors/ntf2955_horiz.sym]
+Did not find specified gafrc file [/home/john/hobby/eda/symbols/transistors/gafrc]
+Loading schematic [/home/john/hobby/eda/symbols/transistors/ntf2955_horiz.sym]
+Did not find specified gafrc file [/home/john/hobby/eda/symbols/transistors/gafrc]
+Loading schematic [/home/john/hobby/eda/symbols/transistors/ntf2955_horiz.sym]
+Did not find specified gafrc file [/home/john/hobby/eda/symbols/transistors/gafrc]
+Saved [/home/john/hobby/eda/symbols/transistors/ntf2955_horiz.sym]
+Saved [/home/john/hobby/eda/symbols/transistors/ntf2955_horiz.sym]
+Loading schematic [/home/john/hobby/eda/symbols/transistors/ntf2955_horiz.sym]
+Did not find specified gafrc file [/home/john/hobby/eda/symbols/transistors/gafrc]
+Loading schematic [/home/john/hobby/eda/symbols/transistors/ntf2955_horiz.sym]
+Did not find specified gafrc file [/home/john/hobby/eda/symbols/transistors/gafrc]
+Saved [/home/john/hobby/eda/symbols/transistors/ntf2955_horiz.sym]
+Hidden text is now invisible
+Hidden text is now visible
+Saved [/home/john/hobby/eda/symbols/transistors/ntf2955_horiz.sym]
+Loading schematic [/home/john/hobby/eda/symbols/transistors/ntf2955_horiz.sym]
+Did not find specified gafrc file [/home/john/hobby/eda/symbols/transistors/gafrc]
+Hidden text is now invisible
+Hidden text is now visible
+Hidden text is now invisible
+Hidden text is now visible
+Hidden text is now invisible
+Hidden text is now visible
+Saved [/home/john/hobby/eda/symbols/transistors/ntf2955_horiz.sym]
+Loading schematic [/home/john/hobby/eda/symbols/transistors/ntf2955_horiz.sym]
+Did not find specified gafrc file [/home/john/hobby/eda/symbols/transistors/gafrc]
+Loading schematic [/home/john/hobby/eda/symbols/transistors/ntf2955_horiz.sym]
+Did not find specified gafrc file [/home/john/hobby/eda/symbols/transistors/gafrc]
+Saved [/home/john/hobby/eda/symbols/transistors/ntf2955_horiz.sym]
+Translating schematic [-9900 -400]
+Saved [/home/john/hobby/eda/symbols/transistors/ntf2955_horiz.sym]
+Translating schematic [2000 2000]
+Saved [/home/john/hobby/eda/symbols/transistors/ntf2955_horiz.sym]
+Loading schematic [/home/john/hobby/eda/symbols/transistors/ntf2955_horiz.sym]
+Did not find specified gafrc file [/home/john/hobby/eda/symbols/transistors/gafrc]
+Hidden text is now invisible
+Hidden text is now visible
+Saved [/home/john/hobby/eda/symbols/transistors/ntf2955_horiz.sym]
+Translating schematic [-2000 -2000]
+Saved [/home/john/hobby/eda/symbols/transistors/ntf2955_horiz.sym]
+Saved [/home/john/hobby/eda/symbols/transistors/ntf2955_horiz.sym]
+Saved [/home/john/hobby/eda/symbols/transistors/ntf2955_horiz.sym]
+Saved [/home/john/hobby/eda/symbols/transistors/ntf2955_horiz.sym]
+Hidden text is now invisible
+Hidden text is now visible
+Saved [/home/john/hobby/eda/symbols/transistors/ntf2955_horiz.sym]
+Saved [/home/john/hobby/eda/symbols/transistors/ntf2955_horiz.sym]

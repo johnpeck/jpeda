@@ -1,0 +1,10 @@
+avrdude: AVR device initialized and ready to accept instructions
+
+Reading | ################################################## | 100% 0.15s
+
+avrdude: Device signature = 0x1e9482
+avrdude: erasing chip
+
+avrdude: safemode: Fuses OK
+
+avrdude done.  Thank you.

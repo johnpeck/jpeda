@@ -1,0 +1,53 @@
+\section{Using the Flip software}
+FLIP stands for FLexible In-system Programmer.  The FLIP software facilitates 
+downloading of firmware images to the target using the preprogrammed 
+bootloader.
+
+\subsection{Using FLIP under Linux}
+FLIP is a Java application, and as such can be made to run on Linux-based 
+machines.  
+
+\subsubsection{Installing FLIP with Java already configured}
+If your Java Virtual Machine (JVM) is already installed and configured, follow 
+these steps to install FLIP:
+\begin{enumerate}
+	\item Copy the \verb+flip_linux_3-2-1.tgz+ archive to a reasonable 
+	location (I like \verb+/usr/share+) and extract it.
+	\item Set some environment variables (I like to do this in my 
+	\verb+.bashrc+ file).
+	\begin{enumerate}
+		\item \verb+FLIP_PATH = /usr/share/flip.3.2.1+
+		\item \verb+FLIP_HOME = /usr/share/flip.3.2.1/bin+
+		\item \verb+JAVE_HOME = /opt/sun-jdk-1.6.0.13+ (You can use 
+			\verb+java-config --jdk-home+ to tell you the proper \verb+JAVA_HOME+ 
+			location)
+	\end{enumerate}	
+\end{enumerate}
+
+
+\subsubsection{Invoking FLIP}
+Once FLIP is installed, there are some quirks to invoking it:
+\begin{enumerate}
+	\item \verb+cd /usr/share/flip.3.2.1/bin+ (You have to actually change to 
+	this directory for FLIP to find everything it needs.
+	\item \verb+flip.sh+
+\end{enumerate}
+
+\subsubsection{Using FLIP with the STK526 evaluation board}
+FLIP will not recognize the AVR target processor when the STK526 board is 
+first connected via USB.  The target must first be forced to run its 
+bootloader code.  Hold down the ``HWB'' button while tapping ``RST'' once to 
+force the AVR to execute its bootloader code.
+
+\subsubsection{Burning a firmware image}
+Once FLIP has initialized communication with your device running bootloader 
+code, it's time to transfer a firmware image.  FLIP will work with Intel HEX 
+file formats to begin the Device Firmware Upgrade (DFU) process.  These files 
+typically have the \verb+*.hex+ or \verb+*.a90+ file extensions.
+
+Sample images are supplied with the STK526 evaluation board on the ``USB 
+Products'' CD.  The sample mouse application is archived in
+\begin{center}
+\verb+/starterkits/STK526/Firmware+
+\end{center}
+along with it's firmware image in the \verb+/hex+ directory.
