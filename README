@@ -1,0 +1,17 @@
+This is a repository for open-source electronics design automation resources:
+* Footprints for use with the PCB project
+	(http://pcb.gpleda.org/)
+* Schematic symbols for use with the gEDA project
+	(http://www.gpleda.org/index.html)
+* Notes on the gEDA --> PCB design flow
+* Notes on developing with AVR microcontrollers on a gentoo system
+* The kitgen and buygen scripts to automate kitting
+	- My part number maps to distributor part numbers are included
+	- My part number maps to part descriptions are included
+	
+You will need the doctools project to build the gEDA and AVR notes.  This is
+included in the project as a submodule, and can be pulled in using:
+	1. git clone git@github.com:johnpeck/jpeda
+	2. git submodule init
+	3. git submodule update
+
