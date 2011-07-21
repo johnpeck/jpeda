@@ -94,6 +94,7 @@ $\backslash$
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %Adding tracks
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\clearpage
 \subsection{Adding tracks}
 Tracks are added using the line tool.  Turning on 135$^\circ$ mode as described in table \ref{track_table} makes the tracks look prettier.  As with everything else, you must activate the layer you wish to draw on before you draw anything.
 
@@ -111,8 +112,9 @@ $\cdot$	&\parbox[c][1.5\height][c]{5cm}{Toggle between line and track mode}\\ \h
 \end{table}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%Adding vias
+% Adding vias
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\clearpage
 \subsection{Adding vias}
 Vias are added using the via tool.  I think the track-to-via routing flow is in flux with PCB, but what works is dropping a via on top of a track to associate it with a net.  When switching layers during routing, drop a via on the last point of a track, then continue the track from the via on another layer.  Use the number keys to switch routing layers.  Some keys important to vias are listed in table \ref{via_keys}.  Note that the ``via size'' is the overall via diameter.
 \begin{table}[htb]
@@ -146,8 +148,19 @@ Power	&22		&12			&42\\ \hline
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %Adding mounting holes
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\clearpage
 \subsection{Adding mounting holes}
 Adding mounting holes works just like manually adding any other element.  Use \textsl{file} $\rightarrow$ \textsl{load element data to paste-buffer} and select your mounting hole footprint file.  Then you can use the mouses to place the holes on the board.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Part placement
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\clearpage
+\subsection{Part placement notes}
+
+\begin{itemize}
+    \item For prototyping, a nice ``pitch'' for 1206 resistors and capacitors is 110 mils or greater.
+\end{itemize}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Checklist for sending board out for fabrication

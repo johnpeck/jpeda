@@ -14,18 +14,9 @@ description=
 run_cmd=
 
 [files]
-current_page=10
-FILE_NAME_0=260;Make;0;16;1;1;1;/home/john/projects/pencils/eda/notes/geda/makefile;0;4
-FILE_NAME_1=511;LaTeX;0;16;0;1;1;/home/john/projects/pencils/eda/notes/geda/geda_notes.tex;0;4
-FILE_NAME_2=3149;LaTeX;0;16;0;1;1;/home/john/projects/pencils/eda/notes/geda/part_symbols.tex;0;4
-FILE_NAME_3=2221;LaTeX;0;16;0;1;1;/home/john/projects/pencils/eda/notes/geda/gschem.tex;0;4
-FILE_NAME_4=1263;LaTeX;0;16;0;1;1;/home/john/projects/pencils/eda/notes/geda/eco.tex;0;4
-FILE_NAME_5=8119;LaTeX;0;16;0;1;1;/home/john/projects/pencils/eda/notes/geda/doctools/latex/mycommands.tex;0;4
-FILE_NAME_6=51;LaTeX;0;16;0;1;1;/home/john/projects/pencils/eda/notes/geda/footprint.tex;0;4
-FILE_NAME_7=2752;LaTeX;0;16;0;1;1;/home/john/projects/pencils/eda/notes/geda/etiquette.tex;0;4
-FILE_NAME_8=10129;LaTeX;0;16;0;1;1;/home/john/projects/pencils/eda/notes/geda/pcb.tex;0;4
-FILE_NAME_9=573;LaTeX;0;16;0;1;1;/home/john/projects/pencils/eda/notes/geda/checklist.tex;0;4
-FILE_NAME_10=316;LaTeX;0;16;0;1;1;/home/john/projects/pencils/eda/notes/geda/gerbers.tex;0;4
+current_page=1
+FILE_NAME_0=0;LaTeX;0;16;0;1;0;/home/john/projects/jpeda/notes/geda/geda_notes.tex;0;4
+FILE_NAME_1=10302;LaTeX;0;16;0;1;1;/home/john/projects/jpeda/notes/geda/pcb.tex;0;4
 
 [long line marker]
 long_line_behaviour=1
