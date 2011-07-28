@@ -129,11 +129,10 @@ def isblankrow(line):
             isblank = False
     return isblank
 
-
-# org2dict(filename)
-# Takes in a file containing an org-mode table with:
-# JRR part | something else | something more |
-# and returns a dictionary with JRR part keys and a list of values
+""" org2dict(filename)
+    Takes in a file containing an org-mode table with:
+    Part number | something else | something more | 
+    and returns a dictionary with part number keys and a list of values. """
 def org2dict(filename):
     rawdict = {}
     if os.path.isfile(filename):
@@ -148,6 +147,7 @@ def org2dict(filename):
                     for entry in fields[2:-1]:
                         dictlist.append(entry.strip())
                     rawdict[jrrpart] = dictlist
+        sortorg(filename,1) # Sort the file every time its read in
         fin.close()
     else:
         print(filename + ' not found')
@@ -191,12 +191,14 @@ def orgheader(filename):
     return([headlist,custlist])
 
 
-# sortorg(filename,blanknum)
-# Reads in a table of org-mode data:
-# JRR part | something | something else
-# ...and sorts it by jrr part number.
-# Inserts blanknum blank rows at the bottom.
-# WARNING: clobbers the file with the sorted version
+""" sortorg(filename,blanknum)
+    Reads in a table of org-mode data:
+    Part number | something | something else
+    ...and sorts it by part number.
+    
+    Inserts blanknum blank rows at the bottom to allow a user to add
+    entries by hand.
+    WARNING: clobbers the file with the sorted version. """
 def sortorg(filename,blanknum):
     sortdict = {}
     if os.path.isfile(filename):

@@ -91,12 +91,12 @@ def venreport(venstr):
     else:
         print('venreport: Did not find file ' + venfile)
 
-# sumreport(dict)
-# Goes through each part in the dictionary with qty > 0 and reports:
-# Part num | Quantity | Vendor | Remove | Description
-#
-# Adding a mark in the "Remove" column disqualifies buying that part
-# from that vendor.
+""" sumreport(dict)
+    Goes through each part in the dictionary with qty > 0 and reports:
+    Part num | Quantity | Vendor | Remove | Description
+
+    Adding a mark in the "Remove" column disqualifies buying that part
+    from that vendor. """
 def sumreport(shortdict):
     sumfile = ('kit' + str(kitgen.kitnum) + '_summary.dat')
     descdict = partman.org2dict(kitgen.descfile)
@@ -110,7 +110,7 @@ def sumreport(shortdict):
     fos.write('|-' + '\n')
     fos.write('|JRR part' + '|Quantity' + '|Vendor' + '|Remove' +
         '|Description|' + '\n')
-    fos.write('| | | | |<70>|' + '\n') # To set description column width
+    fos.write('| | | | |<70>|' + '\n') # Set description column width
     fos.write('|-' + '\n')
     for part in shortdict:
         if (shortdict[part] > 0):
@@ -196,8 +196,8 @@ def rmchecked():
 
 
 def main():
-    # If the summary file already exists, just check for duplicate
-    # vendors in it.
+    """ If the summary file already exists, just check for duplicate
+        vendors in it. """
     if os.path.isfile(kitgen.sumpath):
         rmchecked()
         if hasrepeat(): # Check for repeated parts
@@ -208,8 +208,8 @@ def main():
         else:
             for vendor in venlist:
                 venreport(vendor)
-    # If the summary file does not exist, this is the first time buygen
-    # has been run.  Get the shortages from the fill file.
+    """ If the summary file does not exist, this is the first time buygen
+        has been run.  Get the shortages from the fill file. """
     else:
         sumreport(getshort())
         if hasrepeat(): # Check for repeated parts
