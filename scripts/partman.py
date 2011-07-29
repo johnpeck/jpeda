@@ -147,10 +147,10 @@ def org2dict(filename):
                     for entry in fields[2:-1]:
                         dictlist.append(entry.strip())
                     rawdict[jrrpart] = dictlist
-        sortorg(filename,1) # Sort the file every time its read in
         fin.close()
     else:
         print(filename + ' not found')
+    sortorg(filename,1) # Sort the file every time its read in
     return rawdict
 
 # orgheader(filename)
