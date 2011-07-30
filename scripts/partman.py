@@ -150,7 +150,6 @@ def org2dict(filename):
         fin.close()
     else:
         print(filename + ' not found')
-    sortorg(filename,1) # Sort the file every time its read in
     return rawdict
 
 # orgheader(filename)
