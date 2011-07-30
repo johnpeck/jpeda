@@ -197,7 +197,9 @@ def rmchecked():
 
 def main():
     """ If the summary file already exists, just check for duplicate
-        vendors in it. """
+        vendors in it. If the summary file does not exist, this is the 
+        first time buygen has been run.  Get the shortages from the 
+        fill file."""
     if os.path.isfile(kitgen.sumpath):
         rmchecked()
         if hasrepeat(): # Check for repeated parts
@@ -208,8 +210,6 @@ def main():
         else:
             for vendor in venlist:
                 venreport(vendor)
-    """ If the summary file does not exist, this is the first time buygen
-        has been run.  Get the shortages from the fill file. """
     else:
         sumreport(getshort())
         if hasrepeat(): # Check for repeated parts

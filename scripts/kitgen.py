@@ -17,7 +17,7 @@ import partman
 schpath = '../../implement/schematics'
 
 # The kit number (should just be an integer)
-kitnum = 666
+kitnum = 10
 
 # The kit quantity (how many boards do you want to build)
 kitqty = 1
