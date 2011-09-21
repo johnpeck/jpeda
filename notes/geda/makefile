@@ -14,6 +14,7 @@ TEXSRCS=	config.tex \
 			gerbers.tex \
 			kitgen.tex \
 			doctools/latex/mycommands.tex
+LATEX2HTML= /usr/bin/latex2html
 XDVI_FLAGS= -paper letter -interpreter /usr/bin/X11/gs
 DVIPS_FLAGS= -t letter
 include /usr/share/latex-mk/latex.gmk
