@@ -15,8 +15,11 @@ run_cmd=
 
 [files]
 current_page=1
-FILE_NAME_0=0;LaTeX;0;16;0;1;0;/home/john/projects/jpeda/notes/geda/geda_notes.tex;0;4
-FILE_NAME_1=10302;LaTeX;0;16;0;1;1;/home/john/projects/jpeda/notes/geda/pcb.tex;0;4
+FILE_NAME_0=0;Make;0;16;1;1;0;/home/john/projects/pencils/jpeda/notes/geda/makefile;0;4
+FILE_NAME_1=6401;LaTeX;0;16;0;1;1;/home/john/projects/pencils/jpeda/notes/geda/part_symbols.tex;0;4
+FILE_NAME_2=0;LaTeX;0;16;0;1;0;/home/john/projects/pencils/jpeda/notes/geda/geda_notes.tex;0;4
+FILE_NAME_3=0;LaTeX;0;16;0;1;0;/home/john/projects/pencils/jpeda/notes/geda/doctools/latex/notes_template.tex;0;4
+FILE_NAME_4=9322;LaTeX;0;16;0;1;0;/home/john/projects/pencils/jpeda/notes/geda/doctools/latex/mycommands.tex;0;4
 
 [long line marker]
 long_line_behaviour=1
