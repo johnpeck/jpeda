@@ -382,9 +382,11 @@ def texsafe(string):
     retstring = retstring.replace(',',', ')
     return(retstring)
 
-# multisort(filename, blanknum)
-# Sorts a table of org-mode data that may have repeated part numbers.
-# Inserts blanknum blank rows at the bottom.
+""" multisort(filename, blanknum)
+    Sorts a table of org-mode data that may have repeated part numbers.
+    Inserts blanknum blank rows at the bottom. 
+    * Preserves comment lines at the top and the table headers. 
+    * Use this function for general-purpose org-file sorting. """
 def multisort(filename,blanknum):
     sortdict = {}
     if os.path.isfile(filename):

@@ -1,10 +1,11 @@
 -*- mode: Org; mode: Auto-Revert; -*-
 #+STARTUP: align
 #
-# JRR part descriptions file
+# JRR part descriptions file.
 # 
 # Add new descriptions in the lowest row.  Tab will move between columns
-# and advance to the next row.
+# and advance to the next row.  You can sort the parts when you're finished
+# with sortparts.py.
 #
 # Do not add comments, as they will be clobbered when the file is sorted
 |----------+---------------------------------------------------------------|
@@ -39,6 +40,12 @@
 |----------+---------------------------------------------------------------|
 |     11-8 | 22nF x7r 50V capacitor in 1206 package                        |
 |----------+---------------------------------------------------------------|
+|     11-9 | 220p c0g 50V capacitor in 1206 package                        |
+|----------+---------------------------------------------------------------|
+|    11-10 | 3.3n x7r 50V capacitor in 1206 package                        |
+|----------+---------------------------------------------------------------|
+|     12-3 | 10.0k 250mW 100ppm 1% thick film resistor in 1206 package     |
+|----------+---------------------------------------------------------------|
 |     12-4 | 1.00k 250mW 100ppm 1% thick film resistor in 1206 package     |
 |----------+---------------------------------------------------------------|
 |     12-6 | 348k 250mW 100ppm 1% thick film resistor in 1206 package      |
@@ -58,6 +65,18 @@
 |    12-13 | 3.3k 250mW 100ppm 1% thick film resistor in 1206 package      |
 |----------+---------------------------------------------------------------|
 |    12-14 | 330k 250mW 100ppm 1% thick film resistor in 1206 package      |
+|----------+---------------------------------------------------------------|
+|    12-15 | 150 ohm 250mW 100ppm 1% thick film resistor in 1206 package   |
+|----------+---------------------------------------------------------------|
+|    12-16 | 1.13k 250mW 100ppm 1% thick film resistor in 1206 package     |
+|----------+---------------------------------------------------------------|
+|    12-17 | 3.83k 250mW 100ppm 1% thick film resistor in 1206 package     |
+|----------+---------------------------------------------------------------|
+|    12-18 | 100k 250mW 100ppm 1% thick film resistor in 1206 package      |
+|----------+---------------------------------------------------------------|
+|    12-19 | 200 ohm 250mW 100ppm 1% thick film resistor in 1206 package   |
+|----------+---------------------------------------------------------------|
+|    12-20 | 4.75k 250mW 100ppm 1% thick film resistor in 1206 package     |
 |----------+---------------------------------------------------------------|
 |     13-3 | Pencils project ADC driver PCB                                |
 |----------+---------------------------------------------------------------|
@@ -101,13 +120,5 @@
 |----------+---------------------------------------------------------------|
 |     18-8 | 8 x 4 x 1 clear plastic box                                   |
 |----------+---------------------------------------------------------------|
-|     12-3 | 10.0k 250mW 100ppm 1% thick film resistor in 1206 package     |
-|    12-15 | 150 ohm 250mW 100ppm 1% thick film resistor in 1206 package   |
-|    12-16 | 1.13k 250mW 100ppm 1% thick film resistor in 1206 package     |
-|    12-17 | 3.83k 250mW 100ppm 1% thick film resistor in 1206 package     |
-|     11-9 | 220p c0g 50V capacitor in 1206 package                        |
-|    11-10 | 3.3n x7r 50V capacitor in 1206 package                        |
-|    12-18 | 100k 250mW 100ppm 1% thick film resistor in 1206 package      |
-|    12-19 | 200 ohm 250mW 100ppm 1% thick film resistor in 1206 package   |
-|    12-20 | 4.75k 250mW 100ppm 1% thick film resistor in 1206 package     |
+|          |                                                               |
 |----------+---------------------------------------------------------------|
