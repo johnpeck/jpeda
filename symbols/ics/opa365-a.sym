@@ -33,7 +33,7 @@ T 2301 601 5 10 0 0 0 0 1
 pinlabel=out
 }
 T 11 1511 8 10 0 0 0 0 1
-footprint=SO_8
+footprint=so_8.fp
 T 11 1711 8 10 0 0 0 0 1
 device=opamp
 T 1701 1 8 10 1 1 0 0 1
