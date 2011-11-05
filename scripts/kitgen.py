@@ -17,10 +17,10 @@ import partman
 schpath = '../../implement/schematics'
 
 # The kit number (should just be an integer)
-kitnum = 10
+kitnum = 11
 
 # The kit quantity (how many boards do you want to build)
-kitqty = 1
+kitqty = 3
 
 # List of part descriptions
 descfile = '../purchasing/descriptions.dat'
@@ -65,10 +65,10 @@ def makeattribs():
     fat.write('footprint' + '\n')
     
 
-# Create a dictionary of JRR part:quantity for parts found in the 
-# schematic (or rather, in the BOM output from the schematic).
-#
-# This is coded to operate on the 'bom2' gnetlist output.
+""" Create a dictionary of JPart:quantity for parts found in the 
+    schematic (or rather, in the BOM output from the schematic).
+
+    This is coded to operate on the 'bom2' gnetlist output. """
 def partcount():
     bomqty = {}
     makeattribs()
@@ -80,13 +80,13 @@ def partcount():
     fbm = open(bomname,'r')
     rawbom = fbm.read()
     for line in rawbom.split("\n")[1:-1]:
-    #Split individual lines up based on colon
+    # Split individual lines up based on colon
         if not donread(line):
             fields = line.split(":")
-            #fields[3] is the JRR part number.
-            bomqty[fields[3]] = len(fields[0].split(","))
+            # fields[3] is the JPart number.
+            bomqty[fields[3]] = kitqty * len(fields[0].split(","))
     fbm.close()
-    print('* Found ' + str(len(bomqty)) + ' parts.')
+    print('* Found ' + str(len(bomqty)) + ' unique parts in design.')
     return bomqty
 
 # Create the kitx_fill.dat file

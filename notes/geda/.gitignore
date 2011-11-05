@@ -1,0 +1,6 @@
+# Latex intermediates
+###################
+*.dvi
+*.log
+*.aux
+*.exe
