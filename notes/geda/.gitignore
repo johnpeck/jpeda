@@ -4,3 +4,9 @@
 *.log
 *.aux
 *.exe
+*.toc
+I.old
+
+# Other temporary files
+###################
+

@@ -25,6 +25,9 @@ kitqty = 3
 # List of part descriptions
 descfile = '../purchasing/descriptions.dat'
 
+# List of nominal part costs
+costfile = '../purchasing/nomcost.dat'
+
 # --------------------------End of configuration------------------------
 
 schpath = os.path.abspath(schpath)
@@ -89,8 +92,9 @@ def partcount():
     print('* Found ' + str(len(bomqty)) + ' unique parts in design.')
     return bomqty
 
-# Create the kitx_fill.dat file
-# This file will take numbers of parts already in the kit.
+""" makefill()
+    Create the kitx_fill.dat file.
+    This file will take numbers of parts already in the kit. """
 def makefill():
     bomqty = partcount()
     fillfile = ('kit' + str(kitnum) + '_fill.dat')
@@ -121,27 +125,28 @@ def makefill():
     fot.close()
     partman.sortorg(kitdir + '/' + fillfile,0)
 
-# buildbom()
-# Writes out a bill of materials that can be used to assemble the
-# circuit board.  The format should be:
-# JRR part <whitespace> Ref1,Ref2,Ref3,... <whitespace> Part description
+""" buildbom()
+    Create the kitx_build.bom file.
+    Writes out a bill of materials that can be used to assemble the
+    circuit board.  The format should be:
+    JPart <whitespace> Ref1,Ref2,Ref3,... <whitespace> Part description """
 def buildbom():
     buildfile = ('kit' + str(kitnum) + '_build.bom')
     fob = open(kitdir + '/' + buildfile,'w')
-    refdict = {} # Dictionary of JRR part: refdes list
+    refdict = {} # Dictionary of JPart: refdes list
     fbm = open(bomname,'r')
     rawbom = fbm.read()
     for line in rawbom.split('\n')[1:]:
         if not donread(line):
             fields = line.split(":")
-            #fields[3] is the JRR part number.
+            #fields[3] is the JPart number.
             refdict[fields[3]] = fields[0]
     descdict = partman.org2dict(descfile) # Description dictionary
     fob.write('-*- mode: Org; mode: Auto-Revert; -*-' + '\n')
     fob.write('#+STARTUP: align' + '\n')
     fob.write('#' + '\n')
     fob.write('|-' + '\n')
-    fob.write('|JRR part' + '|References' + '|Description|' + '\n')
+    fob.write('|JPart' + '|References' + '|Description|' + '\n')
     fob.write('| | |<70>|' + '\n') # To set description column width
     fob.write('|-' + '\n')
     for part in refdict:
@@ -161,6 +166,52 @@ def buildbom():
         buildfile.split('.')[0] + ".tex. Execute 'latex " + '\n' +
         '  '  + buildfile.split('.')[0] + ".tex' " +
         'to process .tex file.')
+        
+""" bomcost()
+    Create the kitx_cost.dat file.
+    Columns in the file:
+    JPart | Kit Qty | Each ($) | Extended ($) | Description
+    ...and then there should be a total cost at the bottom. """
+def bomcost():
+    kitcostfile = ('kit' + str(kitnum) + '_cost.bom')
+    fob = open(kitdir + '/' + kitcostfile,'w')
+    costdict = partman.org2dict(costfile) # Maps JPart to unit price
+    descdict = partman.org2dict(descfile) # Description dictionary
+    bomqty = partcount() # Maps JPart to quantity
+    fob.write('-*- mode: Org; mode: Auto-Revert; -*-' + '\n')
+    fob.write('#+STARTUP: align' + '\n')
+    fob.write('#' + '\n')
+    fob.write('|-' + '\n')
+    fob.write('|JPart' + '|Kit Qty' + '|Each ($)' + '|Extended ($)' +
+              '|Description|' + '\n')
+    fob.write('| | | | |<70>|' + '\n') # To set description column width
+    fob.write('|-' + '\n')
+    costsum = 0
+    for part in bomqty:
+        fob.write('|' + part + '|' + str(bomqty[part]) + '|')
+        if part in costdict:
+            eachcost = float(costdict[part][0])
+            extcost = bomqty[part] * eachcost
+            fob.write('%0.2f'%eachcost + '|' + 
+                      '%0.2f'%extcost)
+            costsum += extcost
+        else:
+            fob.write('Unknown' + '|' + 'Unknown')
+        if part in descdict:
+            fob.write('|' + descdict[part][0] + '|' + '\n')
+        else:
+            fob.write('|' + 'unknown' + '|' + '\n')
+        fob.write('|-' + '\n')
+    fob.write('BOM cost is %0.2f'%costsum + '\n')
+    fob.close()
+    partman.multisort(kitdir + '/' + kitcostfile,0)
+    fob = open(kitdir + '/' + kitcostfile,'a')
+    fob.write('BOM cost is $%0.2f'%costsum + '\n')
+    fob.close()
+    
+            
+        
+        
 
 
 def main():
@@ -168,10 +219,11 @@ def main():
     kitdir = makekitdir() # Make the kit directory
     makefill() # Make the fill file -- update this and run buygen
     buildbom() # Create the bom used to stuff the board
+    bomcost() # Show the bom cost broken down by part
     if os.path.isfile(sumpath): # Remove the summary file if it exists
         print('* Removing existing ' + sumpath)
         os.remove(sumpath)
-    os.system('emacs ' + kitdir + '/kit' + str(kitnum) + '_fill.dat &')
+    # os.system('emacs ' + kitdir + '/kit' + str(kitnum) + '_fill.dat &')
 
 if __name__ == "__main__":
     main()
