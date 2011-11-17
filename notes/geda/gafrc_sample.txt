@@ -1,0 +1,26 @@
+;
+; Init file for gEDA
+;
+; The following lines deal with attribute promotion.  When you update
+; a schematic symbol file, attributes that have been promoted to the 
+; schematic won't be updated (the graphical parts always will).
+(attribute-promotion "enabled") ; Needed to promote the refdes
+(keep-invisible "enabled") ; Don't make invisible visable even when promoted
+(always-promote-attributes '("refdes")) ; Only promote these attributes.
+
+; Add the jpeda component libraries.  Resetting the library list allows
+; the custom libraries to come first in the part selection dialog box
+; for gschem
+(reset-component-library)
+(component-library "../../jpeda/symbols/resistors")
+(component-library "../../jpeda/symbols/regulators")
+(component-library "../../jpeda/symbols/capacitors")
+(component-library "../../jpeda/symbols/ics")
+(component-library "../../jpeda/symbols/transistors")
+(component-library "../../jpeda/symbols/power")
+(component-library "../../jpeda/symbols/connectors")
+(component-library "../../jpeda/symbols/diodes")
+(component-library "../../jpeda/symbols/inductors")
+(component-library "../../jpeda/symbols/io")
+(component-library "../../jpeda/symbols/nonelectrics")
+(component-library "../../jpeda/symbols/title")

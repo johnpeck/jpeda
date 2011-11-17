@@ -1,13 +1,13 @@
 \section{gEDA configuration files}
 
-\subsection{The global \texttt{gafrc} file}
-The gEDA suite consists of many different tools, which often need to know where your component libraries are.  The \texttt{gafrc} file is a repository for this information.  It can either be placed in \verb8~./gEDA8, or in an individual project directory.  Here's an excerpt from the \texttt{gafrc} file I keep in \verb8~./gEDA8:
+\subsection{The \texttt{gafrc} file}
+The gEDA suite consists of many different tools, which often need to know where your component libraries are.  The \texttt{gafrc} file is a repository for this information.  I like to keep this file in the schematics directory of an individual project.  This way I can limit how my projects affect each other.  
 
-\begin{center}
-\begin{minipage}{15cm}
-\verbatiminput{/home/john/.gEDA/gafrc_sample}
-\end{minipage}
-\end{center}
+Here's an excerpt from pencils project's \texttt{gafrc} file:
+
+\filesnip{~/projects/pencils/implement/schematics/gafrc}{
+\verbatiminput{gafrc_sample.txt}
+}
 
 The individual tools can be further customized with individual \texttt{rc} files like \texttt{gschemrc}, which are then also placed in the \verb8~./gEDA8 directory.
 
