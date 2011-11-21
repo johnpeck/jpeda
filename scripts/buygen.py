@@ -54,9 +54,9 @@ def needorder(venstr):
     return found
 
 
-# venreport(vendor name)
-# Takes a vendor name (like from venlist) and creates an output report
-# using the summary file to generate the shortage list.
+""" venreport(vendor name)
+    Takes a vendor name (like from venlist) and creates an output report
+    using the summary file to generate the shortage list. """
 def venreport(venstr):
     outfile = ('kit' + str(kitgen.kitnum) + '_' + venstr + '.dat')
     venfile = venpath + '/' + venstr + '.dat'
@@ -193,7 +193,25 @@ def rmchecked():
     fin.close()
     os.remove(kitgen.sumpath)
     os.rename('junk.dat',kitgen.sumpath)
-
+    
+""" venpaste(vendor name)
+    Creates a file for cut-and-paste into a vendor's website """
+def venpaste(venstr):
+    outfile = ('kit' + str(kitgen.kitnum) + '_' + venstr + '.pst')
+    venfile = ('kit' + str(kitgen.kitnum) + '_' + venstr + '.dat')
+    descdict = partman.org2dict(kitgen.descfile)
+    # The vendor file will only exist if there are parts in it to be ordered.
+    if os.path.isfile(kitgen.kitdir + '/' + venfile):
+        buydict = partman.org2dict(kitgen.kitdir + '/' + venfile)
+        fot = open(kitgen.kitdir + '/' + outfile,'w')
+        for part in buydict:
+            """ Newark file format:
+                Newark part <tab> Qty <tab> Comment """
+            if (venstr == 'newark'):
+                fot.write(buydict[part][0] + '\t' + buydict[part][1] + 
+                    '\t' + part + ' ' + descdict[part][0] + '\n')
+        print('--> Use ' + outfile + ' for cut and paste.')
+        fot.close()
 
 def main():
     """ If the summary file already exists, just check for duplicate
@@ -210,6 +228,7 @@ def main():
         else:
             for vendor in venlist:
                 venreport(vendor)
+                venpaste(vendor)
     else:
         sumreport(getshort())
         if hasrepeat(): # Check for repeated parts
@@ -217,6 +236,10 @@ def main():
             print('  then run buygen again.')
             os.system('emacs ' + kitgen.kitdir + '/kit' + str(kitgen.kitnum) +
                         '_summary.dat &')
+        else:
+            for vendor in venlist:
+                venreport(vendor) 
+                venpaste(vendor)
 
 
 if __name__ == "__main__":
