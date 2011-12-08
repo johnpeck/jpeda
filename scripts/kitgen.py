@@ -75,11 +75,12 @@ def makeattribs():
 def partcount():
     bomqty = {}
     makeattribs()
-    # Generate BOM file with gnetlist
-    print('-------------------Output from gnetlist-------------------')
-    os.system('gnetlist -g bom2 ' + schpath + '/' + '*.sch ' + '-o ' +
-         bomname)
-    print('----------------------------------------------------------')
+    # Generate BOM file with gnetlist if it doesn't exist
+    if not os.path.isfile(bomname):
+        print('-------------------Output from gnetlist-------------------')
+        os.system('gnetlist -g bom2 ' + schpath + '/' + '*.sch ' + '-o ' +
+            bomname)
+        print('----------------------------------------------------------')
     fbm = open(bomname,'r')
     rawbom = fbm.read()
     for line in rawbom.split("\n")[1:-1]:
@@ -89,7 +90,6 @@ def partcount():
             # fields[3] is the JPart number.
             bomqty[fields[3]] = kitqty * len(fields[0].split(","))
     fbm.close()
-    print('* Found ' + str(len(bomqty)) + ' unique parts in design.')
     return bomqty
 
 """ makefill()
@@ -119,6 +119,7 @@ def makefill():
             fot.write('|' + part + '|' + str(bomqty[part]) + '| |' + 'No description' + '|' + '\n')
             fot.write('|-' + '\n')
     fot.write('|-')
+    print('* Found ' + str(len(bomqty)) + ' unique parts in design.')
     print('* Fill kit by editing ' + fillfile +
             ' with emacs.  Then run buygen.py' + '\n' +
             '  to see what needs to be ordered.')
@@ -208,13 +209,16 @@ def bomcost():
     fob = open(kitdir + '/' + kitcostfile,'a')
     fob.write('BOM cost is $%0.2f'%costsum + '\n')
     fob.close()
-    
+    print('* Nominal BOM cost breakdown written to ' + kitcostfile + 
+          ' in emacs org-mode format.')
             
-        
-        
-
 
 def main():
+    """ Remove the gnetlist output if it exists.  This ensures that gnetlist
+        will be run every time kitgen runs. """
+    if os.path.isfile(bomname):
+        print('* Removing existing ' + bomname)
+        os.remove(bomname)
     partman.sortorg(descfile,1) # Sort the description file
     kitdir = makekitdir() # Make the kit directory
     makefill() # Make the fill file -- update this and run buygen
@@ -223,7 +227,7 @@ def main():
     if os.path.isfile(sumpath): # Remove the summary file if it exists
         print('* Removing existing ' + sumpath)
         os.remove(sumpath)
-    # os.system('emacs ' + kitdir + '/kit' + str(kitnum) + '_fill.dat &')
+
 
 if __name__ == "__main__":
     main()
