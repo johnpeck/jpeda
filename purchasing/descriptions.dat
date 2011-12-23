@@ -22,6 +22,8 @@
 |-
 |6-6|Green LED in 1206 package|
 |-
+|6-7|Red LED in T-1 5mm leaded package|
+|-
 |7-3|lt3080et adjustable voltage regulator in 5-pin TO-220 package|
 |-
 |7-4|lt3080est adjustable voltage regulator in sot-223 package|
@@ -81,6 +83,8 @@
 |12-19|200 ohm 250mW 100ppm 1% thick film resistor in 1206 package|
 |-
 |12-20|4.75k 250mW 100ppm 1% thick film resistor in 1206 package|
+|-
+|12-21|130 ohm 250mW 50ppm 1% metal film resistor in leaded package|
 |-
 |13-3|Pencils project ADC driver PCB|
 |-
