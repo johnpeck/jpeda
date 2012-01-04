@@ -1,0 +1,13 @@
+-*- mode: Org; mode: Auto-Revert; -*-
+#+STARTUP: align
+# 
+# Pololu part mapping
+#
+# Add new parts at the bottom of the table.
+# Use tabs to cycle through columns and to 
+# move to next row.
+|-------+-------------|
+| JPart | Pololu part |
+|-------+-------------|
+|       |             |
+|-------+-------------|

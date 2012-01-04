@@ -10,7 +10,8 @@ partfiles = ['descriptions.dat',
              'newark.dat',
              'jameco.dat',
              'mcmaster.dat',
-	     'nomcost.dat']
+             'pololu.dat',
+             'nomcost.dat']
 #-------------------- End configuration -------------------------------
 
 import os

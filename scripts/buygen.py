@@ -16,7 +16,7 @@ import kitgen
 venpath = '../purchasing'
 
 # List of vendor names.  Vendor files will be these names plus ".dat"
-venlist = ['digikey','mcmaster','newark','jameco']
+venlist = ['digikey','mcmaster','newark','jameco','pololu']
 
 # --------------------------End of configuration------------------------
 
