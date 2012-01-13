@@ -6,8 +6,10 @@
 # Add new parts at the bottom of the table.
 # Use tabs to cycle through columns and to 
 # move to next row.
-|-------+-------------|
+|-
 | JPart | Pololu part |
-|-------+-------------|
-|  20-1 | 723         |
-|-------+-------------|
+|-
+|20-1|723|
+|-
+|
+|-
