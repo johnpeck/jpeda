@@ -1,0 +1,5 @@
+* jpeda progress
+* ----------------------- Dated notes ---------------------------
+* <2012-03-27 Tue> Added a [[file:notes/strategies.org][strategies]] file for things to remember while designing.
+
+* ------------------------ TODO list ----------------------------
