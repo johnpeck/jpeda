@@ -4,3 +4,6 @@
 [submodule "notes/geda/doctools"]
 	path = notes/geda/doctools
 	url = git@github.com:johnpeck/doctools.git
+[submodule "symbols/capacitors/capgen"]
+	path = symbols/capacitors/capgen
+	url = git@github.com:johnpeck/capgen.git
