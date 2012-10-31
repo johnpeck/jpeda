@@ -1,3 +1,6 @@
 * Voltage regulators
 ** Always design a way to isolate the regulator for debugging
    - We need a way to see if the regulator has failed, or if its output is just being pulled down by the rest of the hardware.  An easy way to do this is a test point at the regulator output, followed by a 0ohm resistor, followed by a net having the name of the voltage rail.  This has the side benefit of allowing you to replace that 0ohm resistor with a current sensing resistor.
+
+* Mounting holes
+** If possible, include the screw size of the mounting hole on the silkscreen.
