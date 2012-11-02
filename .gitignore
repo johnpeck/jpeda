@@ -4,3 +4,13 @@
 *.log
 *.aux
 *.exe
+
+# Ignore temporary symbol files
+symbols/ics/*#
+symbols/nets/*~
+symbols/ics/*~
+symbols/connectors/*~
+
+# Ignore temporary footprints
+footprints/*-
+footprints/*~
