@@ -14,13 +14,13 @@ import partman
     schematics directory.  
     Should be something like ../../reva/schematics with just the rev 
     letter changed. """
-schpath = '../../implement/schematics'
+schpath = '../../implement/boards/usb/schematics'
 
 # The kit number (should just be an integer)
 kitnum = 13
 
 # The kit quantity (how many boards do you want to build)
-kitqty = 2
+kitqty = 1
 
 # List of part descriptions
 descfile = '../purchasing/descriptions.dat'
