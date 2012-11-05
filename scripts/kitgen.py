@@ -36,6 +36,19 @@ sumfile = ('kit' + str(kitnum) + '_summary.dat')
 sumpath = (kitdir + "/" + sumfile)
 bomname = 'gnet.bom'
 
+""" Get names of schematic pages from stdin.  If there are no pages, exit
+    the script.  
+
+    Returns: List of schematic page filenames without paths. """
+def getpages():
+    if (len(sys.argv) == 1): # If no pages are listed on the command line...
+        print('Usage: kitgen.py page1.sch page2.sch page3.sch ...')
+        sys.exit()
+    else:
+        pagelist = sys.argv[1:]
+    return pagelist
+
+
 # Create the full vendor file list including path
 def makevens():
     global venfiles
@@ -72,14 +85,16 @@ def makeattribs():
     schematic (or rather, in the BOM output from the schematic).
 
     This is coded to operate on the 'bom2' gnetlist output. """
-def partcount():
+def partcount(pagelist):
     bomqty = {}
     makeattribs()
+    pagestr = ''
+    for page in pagelist: # Generate space-separated list of schematic pages
+        pagestr += (schpath + '/' + page + ' ')
     # Generate BOM file with gnetlist if it doesn't exist
     if not os.path.isfile(bomname):
         print('-------------------Output from gnetlist-------------------')
-        os.system('gnetlist -g bom2 ' + schpath + '/' + '*.sch ' + '-o ' +
-            bomname)
+        os.system('gnetlist -g bom2 ' + pagestr + '-o ' + bomname)
         print('----------------------------------------------------------')
     fbm = open(bomname,'r')
     rawbom = fbm.read()
@@ -92,11 +107,11 @@ def partcount():
     fbm.close()
     return bomqty
 
-""" makefill()
+""" makefill(pagelist)
     Create the kitx_fill.dat file.
     This file will take numbers of parts already in the kit. """
-def makefill():
-    bomqty = partcount()
+def makefill(pagelist):
+    bomqty = partcount(pagelist)
     fillfile = ('kit' + str(kitnum) + '_fill.dat')
     descdict = partman.org2dict(descfile)
     fot = open(kitdir + '/' + fillfile,'w')
@@ -168,17 +183,17 @@ def buildbom():
         '  '  + buildfile.split('.')[0] + ".tex' " +
         'to process .tex file.')
         
-""" bomcost()
+""" bomcost(pagelist)
     Create the kitx_cost.dat file.
     Columns in the file:
     JPart | Kit Qty | Each ($) | Extended ($) | Description
     ...and then there should be a total cost at the bottom. """
-def bomcost():
+def bomcost(pagelist):
     kitcostfile = ('kit' + str(kitnum) + '_cost.bom')
     fob = open(kitdir + '/' + kitcostfile,'w')
     costdict = partman.org2dict(costfile) # Maps JPart to unit price
     descdict = partman.org2dict(descfile) # Description dictionary
-    bomqty = partcount() # Maps JPart to quantity
+    bomqty = partcount(pagelist) # Maps JPart to quantity
     fob.write('-*- mode: Org; mode: Auto-Revert; -*-' + '\n')
     fob.write('#+STARTUP: align' + '\n')
     fob.write('#' + '\n')
@@ -214,6 +229,7 @@ def bomcost():
             
 
 def main():
+    pagelist = getpages() # Get schematic pages from stdin
     """ Remove the gnetlist output if it exists.  This ensures that gnetlist
         will be run every time kitgen runs. """
     if os.path.isfile(bomname):
@@ -221,9 +237,9 @@ def main():
         os.remove(bomname)
     partman.sortorg(descfile,1) # Sort the description file
     kitdir = makekitdir() # Make the kit directory
-    makefill() # Make the fill file -- update this and run buygen
+    makefill(pagelist) # Make the fill file -- update this and run buygen
     buildbom() # Create the bom used to stuff the board
-    bomcost() # Show the bom cost broken down by part
+    bomcost(pagelist) # Show the bom cost broken down by part
     if os.path.isfile(sumpath): # Remove the summary file if it exists
         print('* Removing existing ' + sumpath)
         os.remove(sumpath)
