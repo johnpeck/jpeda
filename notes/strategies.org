@@ -4,3 +4,7 @@
 
 * Mounting holes
 ** If possible, include the screw size of the mounting hole on the silkscreen.
+* Symbol directories
+** It's nice to have specific symbol directories.
+*** I like directory names like: zeners, red_leds, and opamps because it makes it easier to search when placing parts in a schematic.
+*** All diodes can still have the same number prefix -- this just helps when stocking and kitting.

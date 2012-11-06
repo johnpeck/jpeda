@@ -14,7 +14,7 @@ import partman
     schematics directory.  
     Should be something like ../../reva/schematics with just the rev 
     letter changed. """
-schpath = '../../implement/boards/usb/schematics'
+schpath = '../../implement/boards/usb/reva/schematics'
 
 # The kit number (should just be an integer)
 kitnum = 13
