@@ -8,3 +8,7 @@
 ** It's nice to have specific symbol directories.
 *** I like directory names like: zeners, red_leds, and opamps because it makes it easier to search when placing parts in a schematic.
 *** All diodes can still have the same number prefix -- this just helps when stocking and kitting.
+* Grounding
+** Star points go near the power connection
+*** Return currents ultimately want to get back to their creator -- the power supply.  They can take many different paths to do this, and a design strategy is to force return currents to take a path you lay out.  If this special path doesn't terminate near the power supply connector, you can't be sure that the current won't cause harm along the remaining unconstrained path.
+*** If your board gets power from another board, the same rule applies: the star point goes where the power comes in.
