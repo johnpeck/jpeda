@@ -20,7 +20,7 @@ pinnumber=1
 L 500 200 100 200 3 0 0 0 -1 -1
 L 100 1600 500 1600 3 0 0 0 -1 -1
 T 0 2200 8 10 0 0 0 0 1
-footprint=2pin_mta100_pol.fp
+footprint=4pin_mta100_pol.fp
 T 0 2400 8 10 0 0 0 0 1
 device=connector
 T 0 0 8 10 1 1 0 0 1
