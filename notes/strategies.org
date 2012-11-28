@@ -14,3 +14,7 @@
 *** If your board gets power from another board, the same rule applies: the star point goes where the power comes in.
 * mta100 connectors
 *** Placed at a minimum of 150mils from the board edge
+* Text
+** Text on PCBs should be at least 40mils in height.  If using this 40mils height, the silkscreen width should be 5mils.
+* Test points
+** A good test point spacing is 200mils
