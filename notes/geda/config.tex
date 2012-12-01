@@ -1,7 +1,13 @@
 \section{gEDA configuration files}
 
 \subsection{The \texttt{gafrc} file}
-The gEDA suite consists of many different tools, which often need to know where your component libraries are.  The \texttt{gafrc} file is a repository for this information.  I like to keep this file in the schematics directory of an individual project.  This way I can limit how my projects affect each other.  
+I use the \texttt{gafrc} file to tell \progname{gschem} where my schematic symbol files are, and to control how the symbol attributes are promoted to the schematic level.  I like to keep this file in the schematics directory of an individual board.  I also like to keep the symbols used by the board in a   This way I can limit how my projects affect each other.  
+\dirtree{%
+    .1 schematics.
+    .2 gafrc.
+    .2 jpeda.
+    .3 symbols.
+}
 
 Here's an excerpt from pencils project's \texttt{gafrc} file:
 
