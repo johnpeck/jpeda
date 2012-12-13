@@ -18,3 +18,7 @@
 ** Text on PCBs should be at least 40mils in height.  If using this 40mils height, the silkscreen width should be 5mils.
 * Test points
 ** A good test point spacing is 200mils
+* Field calibration
+** Field calibration for the ec100 should have been an application that ran on the ec.  The os should have had the ability to run a scripting language that can run these kinds of applications.  Such an application would need to have access to a virtual remote interface for sending remote commands.  
+* Not like Audio Analyzer
+** Every time I think about a distributed system for test equipment, I need to remind myself that the audio analyzer was set up this way.  What went wrong?  There was a lot of turnover and micromanaging, but there will be that kind of thing on any project.  Was it just too complicated?  That may have been.  So how do you measure a project's complexity?
