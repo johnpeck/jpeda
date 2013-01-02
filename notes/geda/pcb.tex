@@ -4,153 +4,269 @@
 % Using the command line
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Using the command line}
-Use \kbkey{:} to bring up command-line entry, which can be dismissed with \kbkey{esc}.
+Use \kbkey{:} to bring up command-line entry, which can be dismissed
+with \kbkey{esc}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%Changing the board size
+% Changing the board size
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Changing the board size}
-PCB sets the physical board to be a rectangle the size of your working area by default.  This working area size can be set using \menuitem{file} $\rightarrow$ \menuitem{preferences} $\rightarrow$ \menuitem{sizes}.  However, the physical board dimensions and shape can be made different from the working area by drawing on the ``outline'' layer.
+PCB sets the physical board to be a rectangle the size of your working
+area by default.  This working area size can be set using
+\menuitem{file} $\rightarrow$ \menuitem{preferences} $\rightarrow$
+\menuitem{sizes}.  However, the physical board dimensions and shape
+can be made different from the working area by drawing on the
+``outline'' layer.
 
-To make a custom board outline, use the line tool to draw a 10-mil wide line on your outline drawing layer.  Make sure this layer isn't associated with any physical board layers by looking at \menuitem{file} $\rightarrow$ \menuitem{preferences} $\rightarrow$ \menuitem{layers} $\rightarrow$ \menuitem{groups}.  The outline group number should be different from every other.  The 10-mil thickness is a convention, and the center of the outline drawing lines will become the actual board outline.
+To make a custom board outline, use the line tool to draw a 10-mil
+wide line on your outline drawing layer.  Make sure this layer isn't
+associated with any physical board layers by looking at
+\menuitem{file} $\rightarrow$ \menuitem{preferences} $\rightarrow$
+\menuitem{layers} $\rightarrow$ \menuitem{groups}.  The outline group
+number should be different from every other.  The 10-mil thickness is
+a convention, and the center of the outline drawing lines will become
+the actual board outline.
 
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%Bringing in a netlist
+% Bringing in a netlist
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Bringing in a netlist}
-The \texttt{gsch2pcb} program will generate a netlist file for you to bring into the \texttt{*.pcb} file it also generates.  Bring it in using \textsl{file} $\rightarrow$ \textsl{load netlist file}.  As an added feature, \texttt{gsch2pcb} generates a \texttt{*.cmd} file that will rename footprint pins to coincide with their schematic parts.  This file has to be processed using pcb's command line entry, accessed with \textsl{window} $\rightarrow$ \textsl{command entry}.  Once there, enter
+The \texttt{gsch2pcb} program will generate a netlist file for you to
+bring into the \texttt{*.pcb} file it also generates.  Bring it in
+using \textsl{file} $\rightarrow$ \textsl{load netlist file}.  As an
+added feature, \texttt{gsch2pcb} generates a \texttt{*.cmd} file that
+will rename footprint pins to coincide with their schematic parts.
+This file has to be processed using pcb's command line entry, accessed
+with \textsl{window} $\rightarrow$ \textsl{command entry}.  Once
+there, enter
 \begin{center}
-\begin{minipage}{5cm}
-\verb8ExecuteFile(*.cmd)8
-\end{minipage}
+  \begin{minipage}{5cm}
+    \verb8ExecuteFile(*.cmd)8
+  \end{minipage}
 \end{center}
-to process the command file.  Finally, hit ``w'' to make rubber bands show up.
+to process the command file.  Finally, hit ``w'' to make rubber bands
+show up.
 
-The rat lines are pretty thick by default.  To change them, edit the ``rat-thickness'' setting in whatever configuration file you have.  I like 1 mil.
+The rat lines are pretty thick by default.  To change them, edit the
+``rat-thickness'' setting in whatever configuration file you have.  I
+like 1 mil.
 
 
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%Working with layer groupings
+% Working with layer groupings
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Working with layer groupings}
-PCB allows you to associate different logical routing ``layers'' with ``groups.''  The idea is to allow color-coding of different traces according to their purposes.  All traces belonging to the same layer will have the same color.  For example, power traces could be associated with the ''power'' layer and all be colored red.  Each logical layer must be associated with one unique group, and each group ultimately becomes the artwork for one of a board's physical layers.  Thus, you can't have all power traces belong to the same layer if they exist on different sides of the board.  You can have them all be the same color though, simply by creating ''power-solder'' and ''power-component'' layers with the same colors.  
+PCB allows you to associate different logical routing ``layers'' with
+``groups.''  The idea is to allow color-coding of different traces
+according to their purposes.  All traces belonging to the same layer
+will have the same color.  For example, power traces could be
+associated with the ''power'' layer and all be colored red.  Each
+logical layer must be associated with one unique group, and each group
+ultimately becomes the artwork for one of a board's physical layers.
+Thus, you can't have all power traces belong to the same layer if they
+exist on different sides of the board.  You can have them all be the
+same color though, simply by creating ''power-solder'' and
+''power-component'' layers with the same colors.
 
-The layers ``solder side'' and ``component side'' are always defined since all boards have two sides.  You can't draw traces directly on them though -- you need to associate them and yet another layer with the same group.  To draw traces on the component side, you have to create a layer called something like ``component'' and map it to the same group as ``component side'' using \textsl{file} $\rightarrow$ \textsl{preferences} $\rightarrow$ \textsl{layers}.  
+The layers ``solder side'' and ``component side'' are always defined
+since all boards have two sides.  You can't draw traces directly on
+them though -- you need to associate them and yet another layer with
+the same group.  To draw traces on the component side, you have to
+create a layer called something like ``component'' and map it to the
+same group as ``component side'' using \textsl{file} $\rightarrow$
+\textsl{preferences} $\rightarrow$ \textsl{layers}.
 
-The number of groups available will increase as you add logical layers.  Specifically, the number of groups will be the same as the number of layers, excluding the predefined solder and component side layers.  So, you have to have four custom layers defined to make a four-layer board.   
+The number of groups available will increase as you add logical
+layers.  Specifically, the number of groups will be the same as the
+number of layers, excluding the predefined solder and component side
+layers.  So, you have to have four custom layers defined to make a
+four-layer board.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%Silkscreen preferences
+% Silkscreen preferences
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Silkscreen preferences}
-The default minimum silkscreen text width of 10 mils makes text and reference designators hard to read.  Setting this to 5 mils is acceptable for Sierra Proto Express and makes things more readable.  Using \textsl{file} $\rightarrow$ \textsl{preferences} $\rightarrow$ \textsl{sizes} to change the ``minimum silk width'' parameter will change the width of all current and future silkscreen text.
+The default minimum silkscreen text width of 10 mils makes text and
+reference designators hard to read.  Setting this to 5 mils is
+acceptable for Sierra Proto Express and makes things more readable.
+Using \textsl{file} $\rightarrow$ \textsl{preferences} $\rightarrow$
+\textsl{sizes} to change the ``minimum silk width'' parameter will
+change the width of all current and future silkscreen text.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%Adding a ground/power plane
+% Adding a ground/power plane
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Adding a ground/power plane}
-Planes of copper are added by drawing rectangles.  These planes become associated with the first nets they're connected to.  To draw a ground plane, select the layer associated with your ground plane and draw a rectangle on it.  All pins and pads sharing the same physical layer will now be isolated from the rectangle by their individual ``clearance'' distances.  To actually connect one and thus connect your plane to a net, select the thermal tool and then the pin/via to be connected.  A thermal relief will show up.  Optimizing the rat's nest now with \textsl{o} will make little rat circles on pads that want to connect to the plane.
+Planes of copper are added by drawing rectangles.  These planes become
+associated with the first nets they're connected to.  To draw a ground
+plane, select the layer associated with your ground plane and draw a
+rectangle on it.  All pins and pads sharing the same physical layer
+will now be isolated from the rectangle by their individual
+``clearance'' distances.  To actually connect one and thus connect
+your plane to a net, select the thermal tool and then the pin/via to
+be connected.  A thermal relief will show up.  Optimizing the rat's
+nest now with \textsl{o} will make little rat circles on pads that
+want to connect to the plane.
 
 \begin{table}[htb]
-\begin{center}
-\begin{tabular}{|c|c|}\hline
-Key	&Function \\ \hline \hline
+  \begin{center}
+    \begin{tabular}{|c|c|}\hline
+      Key	&Function \\ \hline \hline
 
-\textsl{j}	
-&\parbox[c][1.5\height][c]{5cm}{Toggle a track's ``clears polygon'' attribute.  This allows you to connect tracks to planes or copper pours.}\\ 
-\hline
+      \textsl{j}	
+      &\parbox[c][1.5\height][c]{5cm}{Toggle a track's ``clears polygon'' attribute.  This allows you to connect tracks to planes or copper pours.}\\ 
+      \hline
 
-\textsl{k}
-&\parbox[c][1.5\height][c]{5cm}{Increase isolation radii around vias or through-hole pins in a copper polygon.}\\
-\hline
+      \textsl{k}
+      &\parbox[c][1.5\height][c]{5cm}{Increase isolation radii around vias or through-hole pins in a copper polygon.}\\
+      \hline
 
-$<shift>$\textsl{k}
-&\parbox[c][1.5\height][c]{5cm}{The opposite of \textsl{k}}\\
-\hline
+      $<shift>$\textsl{k}
+      &\parbox[c][1.5\height][c]{5cm}{The opposite of \textsl{k}}\\
+      \hline
 
-$\backslash$
-&\parbox[c][1.5\height][c]{5cm}{Toggle ``thin draw'' mode for drawing only the ouline of polygons.  You can't see though filled-in polygons to see tracks on the other side of the board.}\\
-\hline
+      $\backslash$
+      &\parbox[c][1.5\height][c]{5cm}{Toggle ``thin draw'' mode for drawing only the ouline of polygons.  You can't see though filled-in polygons to see tracks on the other side of the board.}\\
+      \hline
 
-\end{tabular}
-\end{center}
-\caption{Key bindings important for working with ground planes and copper pours.  Hotkeys modify the object the cursor hovers over.\label{pour_table}}
+    \end{tabular}
+  \end{center}
+  \caption{Key bindings important for working with ground planes and copper pours.  Hotkeys modify the object the cursor hovers over.\label{pour_table}}
 \end{table}
 
 
 
 \begin{itemize}
-	\item The thermal tool can only be used on pins or vias -- not pads.  Pads can be connected to planes by drawing a track between the two and using \textsl{j}.
-	\item New lines drawn on a polygon will not be isolated from it unless \textsl{settings} $\rightarrow$ \textsl{new lines, arcs clear polygons} is checked.
+\item The thermal tool can only be used on pins or vias -- not pads.
+  Pads can be connected to planes by drawing a track between the two
+  and using \textsl{j}.
+\item New lines drawn on a polygon will not be isolated from it unless
+  \textsl{settings} $\rightarrow$ \textsl{new lines, arcs clear
+    polygons} is checked.
 \end{itemize}
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%Adding tracks
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Adding tracks
 \clearpage
-\subsection{Adding tracks}
-Tracks are added using the line tool.  Turning on 135$^\circ$ mode as described in table \ref{track_table} makes the tracks look prettier.  As with everything else, you must activate the layer you wish to draw on before you draw anything.
+\subsection{Routing}
+\subsubsection{Adding tracks}
+Tracks are added using the line tool.  Turning on 135$^\circ$ mode as
+described in table \ref{track_table} makes the tracks look prettier.
+As with everything else, you must activate the layer you wish to draw
+on before you draw anything.
 
-\begin{table}[htb]
-\begin{center}
-\begin{tabular}{|c|c|}\hline
-Key	&Function \\ \hline \hline
+\begin{table}[ht]
+  \begin{center}
+    \begin{tabular}{|c|c|}\hline
+      Key	&Function \\ \hline \hline
 
-$\cdot$	&\parbox[c][1.5\height][c]{5cm}{Toggle between line and track mode}\\ \hline
+      $\cdot$	&\wksentry{7cm}{Toggle between line and track mode}\\ \hline
 
-/	&\parbox[c][1.5\height][c]{5cm}{Toggle between 45$^\circ$ and 135$^\circ$ track modes}\\ \hline
-\end{tabular}
-\end{center}
-\caption{Key bindings important for making tracks with the line tool.\label{track_table}}
+      /	&\wksentry{7cm}{Toggle between 45$^\circ$ and 135$^\circ$ track modes}\\ \hline
+      c &\wksentry{7cm}{Center the layout on the cursor position}\\ \hline
+    \end{tabular}
+  \end{center}
+  \caption{Key bindings important for making tracks with the line tool.\label{track_table}}
 \end{table}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Adding vias
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \clearpage
-\subsection{Adding vias}
-Vias are added using the via tool.  I think the track-to-via routing flow is in flux with PCB, but what works is dropping a via on top of a track to associate it with a net.  When switching layers during routing, drop a via on the last point of a track, then continue the track from the via on another layer.  Use the number keys to switch routing layers.  Some keys important to vias are listed in table \ref{via_keys}.  Note that the ``via size'' is the overall via diameter.
+\subsubsection{Adding vias}
+Vias are added using the via tool.  I think the track-to-via routing
+flow is in flux with PCB, but what works is dropping a via on top of a
+track to associate it with a net.  When switching layers during
+routing, drop a via on the last point of a track, then continue the
+track from the via on another layer.  Use the number keys to switch
+routing layers.  Some keys important to vias are listed in table
+\ref{via_keys}.  Note that the ``via size'' is the overall via
+diameter.
 \begin{table}[htb]
-\begin{center}
-\begin{tabular}{|c|c|}\hline \hline
-Key	&Function \\ \hline
+  \begin{center}
+    \begin{tabular}{|c|c|}\hline \hline
+      Key	&Function \\ \hline
 
-$<$\textsl{shift}$>$v				&\parbox[c][1.5\height][c]{5cm}{Via size +5mil}\\ \hline
-$<$\textsl{shift}$>$$<$\textsl{ctrl}$>$v	&\parbox[c][1.5\height][c]{5cm}{Via size -5mil}\\ \hline
-$<$\textsl{alt}$>$v				&\parbox[c][1.5\height][c]{5cm}{Via drill +5mil}\\ \hline
-$<$\textsl{shift}$>$$<$\textsl{alt}$>$v		&\parbox[c][1.5\height][c]{5cm}{Via drill -5mil}\\ \hline
-k						&\parbox[c][1.5\height][c]{5cm}{Clearance in polygons +2mil}\\ \hline
-$<$\textsl{shift}$>$k				&\parbox[c][1.5\height][c]{5cm}{Clearance in polygons -2mil}\\ \hline
-\end{tabular}
-\end{center}
-\caption{Key bindings important for making vias with the via tool.\label{via_keys}}
+      $<$\textsl{shift}$>$v				&\parbox[c][1.5\height][c]{5cm}{Via size +5mil}\\ \hline
+      $<$\textsl{shift}$>$$<$\textsl{ctrl}$>$v	&\parbox[c][1.5\height][c]{5cm}{Via size -5mil}\\ \hline
+      $<$\textsl{alt}$>$v				&\parbox[c][1.5\height][c]{5cm}{Via drill +5mil}\\ \hline
+      $<$\textsl{shift}$>$$<$\textsl{alt}$>$v		&\parbox[c][1.5\height][c]{5cm}{Via drill -5mil}\\ \hline
+      k						&\parbox[c][1.5\height][c]{5cm}{Clearance in polygons +2mil}\\ \hline
+      $<$\textsl{shift}$>$k				&\parbox[c][1.5\height][c]{5cm}{Clearance in polygons -2mil}\\ \hline
+    \end{tabular}
+  \end{center}
+  \caption{Key bindings important for making vias with the via tool.\label{via_keys}}
 \end{table}
 
-As for via sizes, the important numbers come from the board fabrication houses.  A 15-mil drill is a good minimum via drill size, and an overall via size of 30 mils will give an annulus of 7.5 mils -- a typical minimum annulus is 5 mils.  A polygon clearance of 10 mils is a good minimum size, and 12 mils is safely above that.  For routing more power, remember that a 15-mil via has a diameter of about 50 mils.  The hole plating thickness is roughly the same as copper thickness for boards plated with 1 oz/ft$^2$.  So the minimum via size can handle quite a bit of power.  Table \ref{via_sizes} lists some good via sizes to start with.
-\begin{table}[htb]
-\begin{center}
-\begin{tabular}{|c|c|c|c|c|}\hline
-	&Drill (mils)	&Clearance (mils)	&Via size (mils)\\ \hline \hline
-Signal	&15		&12			&30\\ \hline
-Power	&22		&12			&42\\ \hline
-\end{tabular}
-\end{center}
-\caption{Some good via sizes\label{via_sizes}}
+\subsubsection{Reasonable via sizes}
+As for via sizes, the important numbers come from the board
+fabrication houses.  A 15-mil drill is a good minimum via drill size,
+and an overall via size of 30 mils will give an annulus of 7.5 mils --
+a typical minimum annulus is 5 mils.  A polygon clearance of 10 mils
+is a good minimum size, and 12 mils is safely above that.  For routing
+more power, remember that a 15-mil via has a diameter of about 50
+mils.  The hole plating thickness is roughly the same as copper
+thickness for boards plated with 1 oz/ft$^2$.  So the minimum via size
+can handle quite a bit of power.  Table \ref{via_sizes} lists some
+good via sizes to start with.
+\begin{table}[ht]
+  \begin{center}
+    \begin{tabular}{|c|c|c|c|c|}\hline
+      &Drill (mils)	&Clearance (mils)	&Via size (mils)\\ \hline \hline
+      Signal	&15		&12			&30\\ \hline
+      Power	&22		&12			&42\\ \hline
+    \end{tabular}
+  \end{center}
+  \caption{Some good via sizes\label{via_sizes}}
 \end{table}
+
+\subsubsection{Sloppy via sizes}
+These numbers come from expressPCB, which offers some cheaper products
+than Sierra Proto Express.
+\begin{table}[ht]
+  \begin{center}
+    \begin{tabular}{|c|c|c|c|c|}\hline
+      &Drill (mils)	&Clearance (mils)	&Via size (mils)\\ \hline \hline
+      Signal	&20		&12			&40\\ \hline
+      Power	&35		&12			&60\\ \hline
+    \end{tabular}
+  \end{center}
+  \caption{Some via sizes good for expressPCB\label{tab:epcb_sizes}}
+\end{table}
+
+\subsubsection{Optimizing the netlist}
+After adding a track, press \texttt{o} to optimize the rat's nest.
+PCB's message log window will then tell you how many rat lines remain.
+These rat lines are generated whenever PCB finds a difference between
+the netlist and the actual board connectivity.  They aren't always
+visible though, and it can be hard to find pins or pads that need to
+be routed.  The solution is to search the working file for the word
+``rat.''  A rat line element might look like this:
+\filesnip{mylayout.pcb}{ Rat[146200 81200 1 118000 41000 0 ``via''] }
+...where the first two numbers are the rat line's origin X and Y
+coordinates, in centimils.  The fourth and fifth numbers are the
+line's end point.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%Adding mounting holes
+% Adding mounting holes
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \clearpage
 \subsection{Adding mounting holes}
-Adding mounting holes works just like manually adding any other element.  Use \textsl{file} $\rightarrow$ \textsl{load element data to paste-buffer} and select your mounting hole footprint file.  Then you can use the mouses to place the holes on the board.
+Adding mounting holes works just like manually adding any other
+element.  Use \textsl{file} $\rightarrow$ \textsl{load element data to
+  paste-buffer} and select your mounting hole footprint file.  Then
+you can use the mouse to place the holes on the board.
+\begin{itemize}
+\item 4-40 mounting holes should be surrounded by a 0.25 x 0.25 inch
+  keepout area.
+\end{itemize}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Part placement
@@ -159,7 +275,8 @@ Adding mounting holes works just like manually adding any other element.  Use \t
 \subsection{Part placement notes}
 
 \begin{itemize}
-    \item For prototyping, a nice ``pitch'' for 1206 resistors and capacitors is 110 mils or greater.
+\item For prototyping, a nice ``pitch'' for 1206 resistors and
+  capacitors is 110 mils or greater.
 \end{itemize}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

@@ -1,54 +1,67 @@
 \section{gEDA configuration files}
 
 \subsection{The \texttt{gafrc} file}
-I use the \texttt{gafrc} file to tell \progname{gschem} where my schematic symbol files are, and to control how the symbol attributes are promoted to the schematic level.  I like to keep this file in the schematics directory of an individual board.  I also like to keep the symbols used by the board in a   This way I can limit how my projects affect each other.  
-\dirtree{%
-    .1 schematics.
-    .2 gafrc.
-    .2 jpeda.
-    .3 symbols.
-}
+I use the \texttt{gafrc} file to tell \progname{gschem} where my
+schematic symbol files are, and to control how the symbol attributes
+are promoted to the schematic level.  I like to keep this file in the
+schematics directory of an individual board.  I also like to keep the
+symbols used by the board in the same directory as the
+schematics. This directory tree shows how I arrange things:
+
+\begin{center}
+  \begin{minipage}{3cm}
+    \dirtree{%
+      .1 schematics.  .2 gafrc.  .2 jpeda.  .3 symbols.  }
+  \end{minipage}
+\end{center}
 
 Here's an excerpt from pencils project's \texttt{gafrc} file:
 
 \filesnip{~/projects/pencils/implement/schematics/gafrc}{
-\verbatiminput{gafrc_sample.txt}
-}
+  \verbatiminput{gafrc_sample.txt} }
 
-The individual tools can be further customized with individual \texttt{rc} files like \texttt{gschemrc}, which are then also placed in the \verb8~./gEDA8 directory.
+The individual tools can be further customized with individual
+\texttt{rc} files like \texttt{gschemrc}, which are then also placed
+in the \verb8~./gEDA8 directory.
 
 \subsection{The \texttt{gschemrc} file}
-The configuration options available for your local \verb8~./gEDA/gschemrc8 are shown in the ``system-gschemrc'' file.  On my machine, this file is located in
+The configuration options available for your local
+\verb8~./gEDA/gschemrc8 are shown in the ``system-gschemrc'' file.  On
+my machine, this file is located in
 \begin{center}
-\begin{minipage}{5cm}
-\verb8/usr/share/gEDA/system-gschemrc8.
-\end{minipage}
+  \begin{minipage}{5cm}
+    \verb8/usr/share/gEDA/system-gschemrc8.
+  \end{minipage}
 \end{center}
 
 
 \subsection{PCB configuration}
-The configuration file for PCB will vary with the GUI toolkit PCB was compiled with.  Both lesstif and gtk are supported as of \verb8pcb-200604148.  Use
+The configuration file for PCB will vary with the GUI toolkit PCB was
+compiled with.  Both lesstif and gtk are supported as of
+\verb8pcb-200604148.  Use
 \begin{center}
-\begin{minipage}{2cm}
-\verb8pcb -h8
-\end{minipage}
+  \begin{minipage}{2cm}
+    \verb8pcb -h8
+  \end{minipage}
 \end{center}
-and look for ``Available GUI hid:'' to determine what's been installed and see a list of configuration options.  The double-dash options correspond to X and gtk resources.  Example:
+and look for ``Available GUI hid:'' to determine what's been installed
+and see a list of configuration options.  The double-dash options
+correspond to X and gtk resources.  Example:
 \begin{center}
-\begin{minipage}{7cm}
-Command line:\\
-\verb8pcb --grid-color '#ff0000'8\\
+  \begin{minipage}{7cm}
+    Command line:\\
+    \verb8pcb --grid-color '#ff0000'8\\
 
-.Xdefaults (for lesstif toolkit):\\
-\verb8pcb.grid-color: #ff00008\\
+    .Xdefaults (for lesstif toolkit):\\
+    \verb8pcb.grid-color: #ff00008\\
 
-\$HOME/.pcb/preferences (for gtk toolkit):\\
-\verb8grid-color = #ff00008
-\end{minipage}
+    \$HOME/.pcb/preferences (for gtk toolkit):\\
+    \verb8grid-color = #ff00008
+  \end{minipage}
 \end{center}
 
-%You can also print and export right from the command line.  We use
-%this to generate the documentation; the "master" for illustrations are
-%.pcb files!  We invoke pcb from the Makefile to build png (for html),
-%eps (for dvi), and pdf (for pdf) formats for each board for inclusion
-%in the documentation.
+% You can also print and export right from the command line.  We use
+% this to generate the documentation; the "master" for illustrations
+% are .pcb files!  We invoke pcb from the Makefile to build png (for
+% html), eps (for dvi), and pdf (for pdf) formats for each board for
+% inclusion in the documentation.
