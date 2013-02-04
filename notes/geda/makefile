@@ -5,7 +5,8 @@ MAINFILE = geda_notes
 
 # The other LaTeX sources
 LATEXSRC = $(MAINFILE).tex \
-           pcb.tex
+           pcb.tex \
+           figs/4_40_mthole_fat.eps
 
 #------------------------- Done with configuration ---------------------
 
@@ -30,8 +31,8 @@ geda_notes.ps: geda_notes.dvi
 
 
 .PHONY : dvi
-dvi: $(MAINFILE).tex
-	latex $<
+dvi: $(LATEXSRC)
+	latex $(MAINFILE).tex
 
 # The dvi preview target
 .PHONY: preview
@@ -49,6 +50,10 @@ edit :
 
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Making figures ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+# The mounting hole figure
+figs/4_40_mthole_fat.eps: figs/4_40_mthole_fat.fig
+	fig2dev -L eps -m 1 $< $@
 
 
 clean:
