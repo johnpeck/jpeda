@@ -17,10 +17,10 @@ import partman
 schpath = '../..'
 
 # The kit number (should just be an integer)
-kitnum = 13
+kitnum = 14
 
 # The kit quantity (how many boards do you want to build)
-kitqty = 1
+kitqty = 2
 
 # List of part descriptions
 descfile = '../purchasing/descriptions.dat'
