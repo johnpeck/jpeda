@@ -47,7 +47,7 @@ def needorder(venstr):
         # Shortage list generated from the summary file
         shortdict = partman.org2dict(kitgen.sumpath)
         for part in shortdict:
-            if (shortdict[part][0] > 0) and (shortdict[part][1] == venstr):
+            if (int(shortdict[part][0]) > 0) and (shortdict[part][1] == venstr):
                 found = True
     else:
         print('Did not find file ' + venfile)
@@ -77,7 +77,7 @@ def venreport(venstr):
             fvo.write('|-' + '\n')
             count = 0
             for part in shortdict:
-                if (shortdict[part][1] == venstr) and (shortdict[part][0] > 0):
+                if (shortdict[part][1] == venstr) and (int(shortdict[part][0]) > 0):
                     count += 1
                     fvo.write('|' + part + '|' + vdict[part][0] + '|' +
                         str(shortdict[part][0]) + '|' + '\n')
@@ -109,7 +109,7 @@ def sumreport(shortdict):
     fos.write('# for a given part. \n')
     fos.write('|-' + '\n')
     fos.write('|JRR part' + '|Quantity' + '|Vendor' + '|Remove' +
-        '|Description|' + '\n')
+              '|Description|' + '\n')
     fos.write('| | | | |<70>|' + '\n') # Set description column width
     fos.write('|-' + '\n')
     for part in shortdict:
@@ -121,17 +121,18 @@ def sumreport(shortdict):
                     if part in descdict:
                         fos.write('|' + str(part) + '|' +
                         str(shortdict[part]) + '|' + vendor + '| |' + 
-                        descdict[part][0] + '\n')
+                            descdict[part][0] + '\n')
                     else:
                         fos.write('|' + str(part) + '|' + 
                         str(shortdict[part]) + '|' + vendor + '| |' + 
-                        'No description' + '\n')
+                            'No description' + '\n')
                     fos.write('|-' + '\n')
                     foundit = True
-            if not foundit:
+            if not foundit: # The part was not found in any vendor file.
                 fos.write('|' + str(part) + '|' + str(shortdict[part]) +
-                '|' + 'None' + '|' +'\n')
+                          '|' + 'None' + '|' +'\n')
                 fos.write('|-' + '\n')
+                print('Part ' + str(part) + ' was not found in any vendor file :-(')
     fos.close()
     partman.multisort(kitgen.sumpath,0)
     print('* Wrote summary to ' + sumfile)
