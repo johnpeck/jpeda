@@ -4,7 +4,7 @@ device=pcb
 T 1300 400 8 10 1 1 0 0 1
 value=Boxcom USB interface
 T 0 900 8 10 0 0 0 0 1
-part=13-5
+part=13-7
 T 1300 590 8 10 1 1 0 0 1
 refdes=PCB?
 L 100 100 1200 100 3 0 0 0 -1 -1

@@ -1,0 +1,15 @@
+-*- mode: Org; mode: Auto-Revert; -*-
+#+STARTUP: align
+# 
+# Sierra Proto Express part mapping
+#
+# Add new parts at the bottom of the table.
+# Use tabs to cycle through columns and to 
+# move to next row.
+|-
+| JPart | Sierra part   |
+|-
+|13-7|261898-iNTJ-1|
+|-
+|
+|-
