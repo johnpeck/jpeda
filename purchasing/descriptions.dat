@@ -8,169 +8,169 @@
 # with sortparts.py.
 #
 # Do not add comments, as they will be clobbered when the file is sorted
-|-
+|----------+------------------------------------------------------------------------|
 | JRR part | Description                                                            |
 |          | <70>                                                                   |
-|-
-|0-6|0.5 x 0.5 square and 0.22-inch high rubber feet|
-|-
-|0-7|Jack screw kit for panel-mount DSUB connectors|
-|-
-|0-16|4-40 x 1/4 panhead phillips screw, black anodized|
-|-
-|0-17|4-40 x 1/2 female threaded hex standoff|
-|-
-|0-18|Right angle bracket tapped 4-40 both sides|
-|-
-|0-19|4-40 x 1/4 panhead phillips screw, zinc plated|
-|-
-|6-6|Green LED in 1206 package|
-|-
-|6-7|Red LED in T-1 5mm leaded package|
-|-
-|6-9|Red LED in 1206 package|
-|-
-|7-3|lt3080et adjustable voltage regulator in 5-pin TO-220 package|
-|-
-|7-4|lt3080est adjustable voltage regulator in sot-223 package|
-|-
-|7-5|ths4521id fully differential amplifier in so-8 package|
-|-
-|7-7|opa365aid RRI/O 50MHz 5V opamp in so-8 package|
-|-
-|7-8|dg419l single SPDT analog switch in so-8 package|
-|-
-|7-9|ft232rl FTDI USB <--> UART bridge in ssop-28 package|
-|-
-|7-10|trs202ecd RS-232 transceiver in so-16 package|
-|-
-|7-11|lt6106 high-side current monitor in sot23-5 package|
-|-
-|10-2|hi1206t500r-10 ferrite bead in 1206 package|
-|-
-|11-1|0.1uF x7r 50V capacitor in 1206 package|
-|-
-|11-4|1uF x7r 50V capacitor in 1206 package|
-|-
-|11-5|2.2uF x7r 50V capacitor in 1206 package|
-|-
-|11-6|1.5nF x7r 50V capacitor in 1206 package|
-|-
-|11-7|2.2nF x7r 50V capacitor in 1206 package|
-|-
-|11-8|22nF x7r 50V capacitor in 1206 package|
-|-
-|11-9|220p c0g 50V capacitor in 1206 package|
-|-
-|11-10|3.3n x7r 50V capacitor in 1206 package|
-|-
-|11-11|22p c0g 50V capacitor in 1206 package|
-|-
-|11-12|1n x7r 500V capacitor in 1206 package|
-|-
-|11-13|10n x7r 50V capacitor in 1206 package|
-|-
-|11-14|47p c0g 50V capacitor in 1206 package|
-|-
-|11-16|4.7u x7r 16V capacitor in 1206 package|
-|-
-|12-3|10.0k 250mW 100ppm 1% thick film resistor in 1206 package|
-|-
-|12-4|1.00k 250mW 100ppm 1% thick film resistor in 1206 package|
-|-
-|12-5|100 ohm 250mW 100ppm 1% thick film resistor in 1206 package|
-|-
-|12-6|348k 250mW 100ppm 1% thick film resistor in 1206 package|
-|-
-|12-7|3.48k 250mW 100ppm 1% thick film resistor in 1206 package|
-|-
-|12-8|0 ohm jumper in 1206 resistor package|
-|-
-|12-9|49.9 ohm 250mW 100ppm 1% thick film resistor in 1206 package|
-|-
-|12-10|10 ohm 250mW 100ppm 1% thick film resistor in 1206 package|
-|-
-|12-11|180 ohm 250mW 100ppm 1% thick film resistor in 1206 package|
-|-
-|12-12|1k CTS 296-series 125mW potentiometer|
-|-
-|12-13|3.3k 250mW 100ppm 1% thick film resistor in 1206 package|
-|-
-|12-14|330k 250mW 100ppm 1% thick film resistor in 1206 package|
-|-
-|12-15|150 ohm 250mW 100ppm 1% thick film resistor in 1206 package|
-|-
-|12-16|1.13k 250mW 100ppm 1% thick film resistor in 1206 package|
-|-
-|12-17|3.83k 250mW 100ppm 1% thick film resistor in 1206 package|
-|-
-|12-18|100k 250mW 100ppm 1% thick film resistor in 1206 package|
-|-
-|12-19|200 ohm 250mW 100ppm 1% thick film resistor in 1206 package|
-|-
-|12-20|4.75k 250mW 100ppm 1% thick film resistor in 1206 package|
-|-
-|12-21|130 ohm 250mW 50ppm 1% metal film resistor in leaded package|
-|-
-|12-22|1 ohm 250mW 250ppm 1% thick film resistor in 1206 package|
-|-
-|13-3|Pencils project ADC driver PCB|
-|-
-|13-5|Boxcom project USB interface PCB revision a|
-|-
-|14-6|2-pin white polarized mta100 header|
-|-
-|14-7|2-pin white polarized mta100 plug|
-|-
-|14-9|3-pin white polarized right-angle mta100 header|
-|-
-|14-10|3-pin white polarized mta100 plug|
-|-
-|14-11|6-pin 3x2 pin header for AVR ISP connections|
-|-
-|14-12|4-pin white polarized mta100 header|
-|-
-|14-13|4-pin white polarized mta100 plug|
-|-
-|14-14|Black banana plug for bare wire connections|
-|-
-|14-15|Red banana plug for bare wire connections|
-|-
-|14-16|9-pin panel mount DSUB connector with solder cups|
-|-
-|14-17|2-pin white polarized right-angle mta100 header|
-|-
-|14-20|Test point -- small and red|
-|-
-|14-21|Test point -- big and white|
-|-
-|14-24|BNC jack -- PCB mount, black body|
-|-
-|14-25|USB jack -- PCB mount, large "B" side|
-|-
-|14-26|6-pin white polarized right-angle mta100 header|
-|-
-|14-27|6-pin white polarized mta100 plug|
-|-
-|14-28|3-pin white polarized mta100 header|
-|-
-|14-30|7-pin white polarized mta100 header|
-|-
-|15-3|6 x 5 x 4 BUD aluminum enclosure|
-|-
-|16-23|AVR Dragon programmer|
-|-
-|16-24|AVR Butterfly evaluation board for atmega169pa|
-|-
-|16-28|AVR ISP mkII programmer|
-|-
-|18-2|13 x 9 x 2 clear plastic box|
-|-
-|18-8|8 x 4 x 1 clear plastic box|
-|-
-|20-1|LV-MaxSonar-EZ0 sonar range finder|
-|-
-|21-1|SPST panel-mount lighted rocker switch|
-|-
-|
-|-
+|----------+------------------------------------------------------------------------|
+|      0-6 | 0.5 x 0.5 square and 0.22-inch high rubber feet                        |
+|----------+------------------------------------------------------------------------|
+|      0-7 | Jack screw kit for panel-mount DSUB connectors                         |
+|----------+------------------------------------------------------------------------|
+|     0-16 | 4-40 x 1/4 panhead phillips screw, black anodized                      |
+|----------+------------------------------------------------------------------------|
+|     0-17 | 4-40 x 1/2 female threaded hex standoff                                |
+|----------+------------------------------------------------------------------------|
+|     0-18 | Right angle bracket tapped 4-40 both sides                             |
+|----------+------------------------------------------------------------------------|
+|     0-19 | 4-40 x 1/4 panhead phillips screw, zinc plated                         |
+|----------+------------------------------------------------------------------------|
+|      6-6 | Green LED in 1206 package                                              |
+|----------+------------------------------------------------------------------------|
+|      6-7 | Red LED in T-1 5mm leaded package                                      |
+|----------+------------------------------------------------------------------------|
+|      6-9 | Red LED in 1206 package                                                |
+|----------+------------------------------------------------------------------------|
+|      7-3 | lt3080et adjustable voltage regulator in 5-pin TO-220 package          |
+|----------+------------------------------------------------------------------------|
+|      7-4 | lt3080est adjustable voltage regulator in sot-223 package              |
+|----------+------------------------------------------------------------------------|
+|      7-5 | ths4521id fully differential amplifier in so-8 package                 |
+|----------+------------------------------------------------------------------------|
+|      7-7 | opa365aid RRI/O 50MHz 5V opamp in so-8 package                         |
+|----------+------------------------------------------------------------------------|
+|      7-8 | dg419l single SPDT analog switch in so-8 package                       |
+|----------+------------------------------------------------------------------------|
+|      7-9 | ft232rl FTDI USB <--> UART bridge in ssop-28 package                   |
+|----------+------------------------------------------------------------------------|
+|     7-10 | trs202ecd RS-232 transceiver in so-16 package                          |
+|----------+------------------------------------------------------------------------|
+|     7-11 | lt6106 high-side current monitor in sot23-5 package                    |
+|----------+------------------------------------------------------------------------|
+|     10-2 | hi1206t500r-10 ferrite bead in 1206 package                            |
+|----------+------------------------------------------------------------------------|
+|     11-1 | 0.1uF x7r 50V capacitor in 1206 package                                |
+|----------+------------------------------------------------------------------------|
+|     11-4 | 1uF x7r 50V capacitor in 1206 package                                  |
+|----------+------------------------------------------------------------------------|
+|     11-5 | 2.2uF x7r 50V capacitor in 1206 package                                |
+|----------+------------------------------------------------------------------------|
+|     11-6 | 1.5nF x7r 50V capacitor in 1206 package                                |
+|----------+------------------------------------------------------------------------|
+|     11-7 | 2.2nF x7r 50V capacitor in 1206 package                                |
+|----------+------------------------------------------------------------------------|
+|     11-8 | 22nF x7r 50V capacitor in 1206 package                                 |
+|----------+------------------------------------------------------------------------|
+|     11-9 | 220p c0g 50V capacitor in 1206 package                                 |
+|----------+------------------------------------------------------------------------|
+|    11-10 | 3.3n x7r 50V capacitor in 1206 package                                 |
+|----------+------------------------------------------------------------------------|
+|    11-11 | 22p c0g 50V capacitor in 1206 package                                  |
+|----------+------------------------------------------------------------------------|
+|    11-12 | 1n x7r 500V capacitor in 1206 package                                  |
+|----------+------------------------------------------------------------------------|
+|    11-13 | 10n x7r 50V capacitor in 1206 package                                  |
+|----------+------------------------------------------------------------------------|
+|    11-14 | 47p c0g 50V capacitor in 1206 package                                  |
+|----------+------------------------------------------------------------------------|
+|    11-16 | 4.7u x7r 16V capacitor in 1206 package                                 |
+|----------+------------------------------------------------------------------------|
+|     12-3 | 10.0k 250mW 100ppm 1% thick film resistor in 1206 package              |
+|----------+------------------------------------------------------------------------|
+|     12-4 | 1.00k 250mW 100ppm 1% thick film resistor in 1206 package              |
+|----------+------------------------------------------------------------------------|
+|     12-5 | 100 ohm 250mW 100ppm 1% thick film resistor in 1206 package            |
+|----------+------------------------------------------------------------------------|
+|     12-6 | 348k 250mW 100ppm 1% thick film resistor in 1206 package               |
+|----------+------------------------------------------------------------------------|
+|     12-7 | 3.48k 250mW 100ppm 1% thick film resistor in 1206 package              |
+|----------+------------------------------------------------------------------------|
+|     12-8 | 0 ohm jumper in 1206 resistor package                                  |
+|----------+------------------------------------------------------------------------|
+|     12-9 | 49.9 ohm 250mW 100ppm 1% thick film resistor in 1206 package           |
+|----------+------------------------------------------------------------------------|
+|    12-10 | 10 ohm 250mW 100ppm 1% thick film resistor in 1206 package             |
+|----------+------------------------------------------------------------------------|
+|    12-11 | 180 ohm 250mW 100ppm 1% thick film resistor in 1206 package            |
+|----------+------------------------------------------------------------------------|
+|    12-12 | 1k CTS 296-series 125mW potentiometer                                  |
+|----------+------------------------------------------------------------------------|
+|    12-13 | 3.3k 250mW 100ppm 1% thick film resistor in 1206 package               |
+|----------+------------------------------------------------------------------------|
+|    12-14 | 330k 250mW 100ppm 1% thick film resistor in 1206 package               |
+|----------+------------------------------------------------------------------------|
+|    12-15 | 150 ohm 250mW 100ppm 1% thick film resistor in 1206 package            |
+|----------+------------------------------------------------------------------------|
+|    12-16 | 1.13k 250mW 100ppm 1% thick film resistor in 1206 package              |
+|----------+------------------------------------------------------------------------|
+|    12-17 | 3.83k 250mW 100ppm 1% thick film resistor in 1206 package              |
+|----------+------------------------------------------------------------------------|
+|    12-18 | 100k 250mW 100ppm 1% thick film resistor in 1206 package               |
+|----------+------------------------------------------------------------------------|
+|    12-19 | 200 ohm 250mW 100ppm 1% thick film resistor in 1206 package            |
+|----------+------------------------------------------------------------------------|
+|    12-20 | 4.75k 250mW 100ppm 1% thick film resistor in 1206 package              |
+|----------+------------------------------------------------------------------------|
+|    12-21 | 130 ohm 250mW 50ppm 1% metal film resistor in leaded package           |
+|----------+------------------------------------------------------------------------|
+|    12-22 | 1 ohm 250mW 250ppm 1% thick film resistor in 1206 package              |
+|----------+------------------------------------------------------------------------|
+|     13-3 | Pencils project ADC driver PCB                                         |
+|----------+------------------------------------------------------------------------|
+|     13-5 | Boxcom project USB interface PCB revision a                            |
+|----------+------------------------------------------------------------------------|
+|     14-6 | 2-pin white polarized mta100 header                                    |
+|----------+------------------------------------------------------------------------|
+|     14-7 | 2-pin white polarized mta100 plug                                      |
+|----------+------------------------------------------------------------------------|
+|     14-9 | 3-pin white polarized right-angle mta100 header                        |
+|----------+------------------------------------------------------------------------|
+|    14-10 | 3-pin white polarized mta100 plug                                      |
+|----------+------------------------------------------------------------------------|
+|    14-11 | 6-pin 3x2 pin header for AVR ISP connections                           |
+|----------+------------------------------------------------------------------------|
+|    14-12 | 4-pin white polarized mta100 header                                    |
+|----------+------------------------------------------------------------------------|
+|    14-13 | 4-pin white polarized mta100 plug                                      |
+|----------+------------------------------------------------------------------------|
+|    14-14 | Black banana plug for bare wire connections                            |
+|----------+------------------------------------------------------------------------|
+|    14-15 | Red banana plug for bare wire connections                              |
+|----------+------------------------------------------------------------------------|
+|    14-16 | 9-pin panel mount DSUB connector with solder cups                      |
+|----------+------------------------------------------------------------------------|
+|    14-17 | 2-pin white polarized right-angle mta100 header                        |
+|----------+------------------------------------------------------------------------|
+|    14-20 | Test point -- small and red                                            |
+|----------+------------------------------------------------------------------------|
+|    14-21 | Test point -- big and white                                            |
+|----------+------------------------------------------------------------------------|
+|    14-24 | BNC jack -- PCB mount, black body                                      |
+|----------+------------------------------------------------------------------------|
+|    14-25 | USB jack -- PCB mount, large "B" side                                  |
+|----------+------------------------------------------------------------------------|
+|    14-26 | 6-pin white polarized right-angle mta100 header                        |
+|----------+------------------------------------------------------------------------|
+|    14-27 | 6-pin white polarized mta100 plug                                      |
+|----------+------------------------------------------------------------------------|
+|    14-28 | 3-pin white polarized mta100 header                                    |
+|----------+------------------------------------------------------------------------|
+|    14-30 | 7-pin white polarized mta100 header                                    |
+|----------+------------------------------------------------------------------------|
+|     15-3 | 6 x 5 x 4 BUD aluminum enclosure                                       |
+|----------+------------------------------------------------------------------------|
+|    16-23 | AVR Dragon programmer                                                  |
+|----------+------------------------------------------------------------------------|
+|    16-24 | AVR Butterfly evaluation board for atmega169pa                         |
+|----------+------------------------------------------------------------------------|
+|    16-28 | AVR ISP mkII programmer                                                |
+|----------+------------------------------------------------------------------------|
+|     18-2 | 13 x 9 x 2 clear plastic box                                           |
+|----------+------------------------------------------------------------------------|
+|     18-8 | 8 x 4 x 1 clear plastic box                                            |
+|----------+------------------------------------------------------------------------|
+|     20-1 | LV-MaxSonar-EZ0 sonar range finder                                     |
+|----------+------------------------------------------------------------------------|
+|     21-1 | SPST panel-mount lighted rocker switch                                 |
+|----------+------------------------------------------------------------------------|
+|     13-7 | USB board for Boxcom                                                   |
+|----------+------------------------------------------------------------------------|

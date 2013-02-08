@@ -210,7 +210,12 @@ def venpaste(venstr):
                 Newark part <tab> Qty <tab> Comment """
             if (venstr == 'newark'):
                 fot.write(buydict[part][0] + '\t' + buydict[part][1] + 
-                    '\t' + part + ' ' + descdict[part][0] + '\n')
+                          '\t' + part + ' ' + descdict[part][0] + '\n')
+            """ Digikey file format:
+                Quantity <tab> Digi-Key part number <tab> Customer reference """
+            if (venstr == 'digikey'):
+                fot.write(buydict[part][1] + '\t' + buydict[part][0] +
+                          '\t' + part + ' ' + descdict[part][0] + '\n')
         print('--> Use ' + outfile + ' for cut and paste.')
         fot.close()
 
