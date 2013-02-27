@@ -214,8 +214,10 @@ def venpaste(venstr):
             """ Digikey file format:
                 Quantity <tab> Digi-Key part number <tab> Customer reference """
             if (venstr == 'digikey'):
+                # Digi-Key can't tolerate commas at all
+                description = descdict[part][0].replace(',','')
                 fot.write(buydict[part][1] + '\t' + buydict[part][0] +
-                          '\t' + part + ' ' + descdict[part][0] + '\n')
+                          '\t' + part + ' ' + description + '\n')
         print('--> Use ' + outfile + ' for cut and paste.')
         fot.close()
 

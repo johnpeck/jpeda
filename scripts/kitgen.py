@@ -7,6 +7,7 @@ import sys, os
 # script is actually located.
 os.chdir(os.path.dirname(os.path.realpath(__file__)))
 import partman
+import kitconf # The kit number and quantity
 
 #---------------------------Begin configuration-------------------------
 
@@ -16,12 +17,6 @@ import partman
     letter changed. """
 schpath = '../..'
 
-# The kit number (should just be an integer)
-kitnum = 14
-
-# The kit quantity (how many boards do you want to build)
-kitqty = 2
-
 # List of part descriptions
 descfile = '../purchasing/descriptions.dat'
 
@@ -29,6 +24,12 @@ descfile = '../purchasing/descriptions.dat'
 costfile = '../purchasing/nomcost.dat'
 
 # --------------------------End of configuration------------------------
+
+# The kit number (should just be an integer)
+kitnum = kitconf.kitnum
+
+# The kit quantity (how many boards do you want to build)
+kitqty = kitconf.kitqty
 
 schpath = os.path.abspath(schpath)
 kitdir = schpath + '/kit' + str(kitnum)
