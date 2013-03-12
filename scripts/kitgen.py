@@ -192,6 +192,7 @@ def buildbom():
 def bomcost(pagelist):
     kitcostfile = ('kit' + str(kitnum) + '_cost.bom')
     fob = open(kitdir + '/' + kitcostfile,'w')
+    partman.sortorg(costfile,0) # Sort the nomcost file
     costdict = partman.org2dict(costfile) # Maps JPart to unit price
     descdict = partman.org2dict(descfile) # Description dictionary
     bomqty = partcount(pagelist) # Maps JPart to quantity
