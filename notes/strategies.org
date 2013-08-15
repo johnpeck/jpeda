@@ -1,24 +1,51 @@
+* Printers for engineers
+** Should always be able to print double sided
+   - If you're going to be doing research, you need to be able to
+     print papers double-sided.  I don't know how I got away with not
+     having that at home.
 * Voltage regulators
 ** Always design a way to isolate the regulator for debugging
-   - We need a way to see if the regulator has failed, or if its output is just being pulled down by the rest of the hardware.  An easy way to do this is a test point at the regulator output, followed by a 0ohm resistor, followed by a net having the name of the voltage rail.  This has the side benefit of allowing you to replace that 0ohm resistor with a current sensing resistor.
-
+   - We need a way to see if the regulator has failed, or if its
+     output is just being pulled down by the rest of the hardware.  An
+     easy way to do this is a test point at the regulator output,
+     followed by a 0ohm resistor, followed by a net having the name of
+     the voltage rail.  This has the side benefit of allowing you to
+     replace that 0ohm resistor with a current sensing resistor.
 * Mounting holes
-** If possible, include the screw size of the mounting hole on the silkscreen.
+** Include the screw size of the mounting hole on the silkscreen.
 * Symbol directories
 ** It's nice to have specific symbol directories.
-*** I like directory names like: zeners, red_leds, and opamps because it makes it easier to search when placing parts in a schematic.
-*** All diodes can still have the same number prefix -- this just helps when stocking and kitting.
+   - I like directory names like: zeners, red_leds, and opamps because
+     it makes it easier to search when placing parts in a schematic.
+   - All diodes can still have the same number prefix -- this just
+     helps when stocking and kitting.
 * Grounding
 ** Star points go near the power connection
-*** Return currents ultimately want to get back to their creator -- the power supply.  They can take many different paths to do this, and a design strategy is to force return currents to take a path you lay out.  If this special path doesn't terminate near the power supply connector, you can't be sure that the current won't cause harm along the remaining unconstrained path.
-*** If your board gets power from another board, the same rule applies: the star point goes where the power comes in.
+   - Return currents ultimately want to get back to their creator --
+     the power supply.  They can take many different paths to do this,
+     and a design strategy is to force return currents to take a path
+     you lay out.  If this special path doesn't terminate near the
+     power supply connector, you can't be sure that the current won't
+     cause harm along the remaining unconstrained path.
+   - If your board gets power from another board, the same rule
+     applies: the star point goes where the power comes in.
 * mta100 connectors
 *** Placed at a minimum of 150mils from the board edge
 * Text
-** Text on PCBs should be at least 40mils in height.  If using this 40mils height, the silkscreen width should be 5mils.
+  - Text on PCBs should be at least 40mils in height.  If using this
+    40mils height, the silkscreen width should be 5mils.
 * Test points
 ** A good test point spacing is 200mils
 * Field calibration
-** Field calibration for the ec100 should have been an application that ran on the ec.  The os should have had the ability to run a scripting language that can run these kinds of applications.  Such an application would need to have access to a virtual remote interface for sending remote commands.  
+  - Field calibration for the ec100 should have been an application
+    that ran on the ec.  The os should have had the ability to run a
+    scripting language that can run these kinds of applications.  Such
+    an application would need to have access to a virtual remote
+    interface for sending remote commands.
 * Not like Audio Analyzer
-** Every time I think about a distributed system for test equipment, I need to remind myself that the audio analyzer was set up this way.  What went wrong?  There was a lot of turnover and micromanaging, but there will be that kind of thing on any project.  Was it just too complicated?  That may have been.  So how do you measure a project's complexity?
+  - Every time I think about a distributed system for test equipment,
+    I need to remind myself that the audio analyzer was set up this
+    way.  What went wrong?  There was a lot of turnover and
+    micromanaging, but there will be that kind of thing on any
+    project.  Was it just too complicated?  That may have been.  So
+    how do you measure a project's complexity?
