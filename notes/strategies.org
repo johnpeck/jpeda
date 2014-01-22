@@ -1,3 +1,9 @@
+* Keeping track of underling progress
+** This is the manager's job
+   - Engineers should not have to constantly log what they're doing,
+     especially because it's the manager's job to keep track of this.
+     The manager can walk around and ask "what are you working on"
+     instead of putting some software in the loop.
 * Printers for engineers
 ** Should always be able to print double sided
    - If you're going to be doing research, you need to be able to
