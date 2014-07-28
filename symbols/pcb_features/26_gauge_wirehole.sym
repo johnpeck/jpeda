@@ -1,0 +1,19 @@
+v 20130925 2
+P 100 400 400 400 1 0 0
+{
+T -645 295 5 10 0 0 0 0 1
+pinlabel=1
+T 305 445 5 10 1 1 0 6 1
+pinnumber=1
+T -700 400 5 10 0 0 0 0 1
+pinseq=1
+}
+V 600 400 200 3 0 0 0 -1 -1 0 -1 -1 -1 -1 -1
+T 912 600 8 10 0 0 0 0 1
+footprint=26_gauge_wirehole.fp
+T 912 400 8 10 0 0 0 0 1
+device=pcb_feature
+T 12 0 8 10 1 1 0 0 1
+value=26 gauge hole
+T 412 662 8 10 1 1 0 0 1
+refdes=FP?
