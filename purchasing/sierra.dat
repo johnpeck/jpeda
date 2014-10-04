@@ -6,10 +6,10 @@
 # Add new parts at the bottom of the table.
 # Use tabs to cycle through columns and to 
 # move to next row.
-|-
+|-------+---------------|
 | JPart | Sierra part   |
-|-
-|13-7|261898-iNTJ-1|
-|-
-|
-|-
+|-------+---------------|
+|  13-7 | 261898-iNTJ-1 |
+|-------+---------------|
+|  13-8 | 316432-iNTJ-1 |
+|-------+---------------|
